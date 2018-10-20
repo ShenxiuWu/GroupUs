@@ -1,4 +1,4 @@
-
+package com.github.GroupUs;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
