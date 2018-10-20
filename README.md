@@ -1,4 +1,5 @@
 # GroupUs
+
 JavaFx-mongo
 
 Sign up/in
@@ -10,3 +11,8 @@ Join
 Post
 
 CI
+
+# Set up
+
+Go to project structure -> module
+Add the jar file for mongodb
