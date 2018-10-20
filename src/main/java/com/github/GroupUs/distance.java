@@ -22,24 +22,28 @@ public class distance {
         geoCoding();
         distanceMatirx();
     }
-    private static void geoCoding() {
+    public static String geoCoding() {
         GeoApiContext context = new GeoApiContext.Builder()
                 .apiKey("AIzaSyAGqEp56siF_9xsaDcxB5JTIczUOb1s7dc")
                 .build();
+        String res = "";
         try {
             GeocodingResult[] results = GeocodingApi.geocode(context,
                     "Columbia University").await();
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             System.out.println(gson.toJson(results[0].addressComponents));
+            res = gson.toJson(results[0].addressComponents);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return res;
     }
 
-    private static void distanceMatirx() {
+    public static String distanceMatirx() {
         GeoApiContext context = new GeoApiContext.Builder()
                 .apiKey("AIzaSyAGqEp56siF_9xsaDcxB5JTIczUOb1s7dc")
                 .build();
+        String res = "";
         try {
             String[] origins = new String[] {"Columbia University NY"};
             String[] destinations = new String[] {"Flushing NY"};
@@ -51,8 +55,10 @@ public class distance {
                     .await();
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             System.out.println(gson.toJson(result));
+            res = gson.toJson(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return res;
     }
 }
