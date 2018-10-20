@@ -24,7 +24,7 @@ public class distance {
     }
     public static String geoCoding() {
         GeoApiContext context = new GeoApiContext.Builder()
-                .apiKey("AIzaSyAGqEp56siF_9xsaDcxB5JTIczUOb1s7dc")
+                .apiKey("AIzaSyBB2Mz7wexVz5mlpom9NqQc--6bf5tPbfo")
                 .build();
         String res = "";
         try {
@@ -41,7 +41,7 @@ public class distance {
 
     public static String distanceMatirx() {
         GeoApiContext context = new GeoApiContext.Builder()
-                .apiKey("AIzaSyAGqEp56siF_9xsaDcxB5JTIczUOb1s7dc")
+                .apiKey("AIzaSyBB2Mz7wexVz5mlpom9NqQc--6bf5tPbfo")
                 .build();
         String res = "";
         try {
