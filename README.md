@@ -1,7 +1,6 @@
 # GroupUs
-JavaFx-AWS
+JavaFx-mongo
 
-(AWS)
 Sign up/in
 
 Search
@@ -9,3 +8,5 @@ Search
 Join
 
 Post
+
+CI
