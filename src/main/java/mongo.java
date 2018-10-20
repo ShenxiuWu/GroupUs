@@ -1,4 +1,3 @@
-package sample;
 
 import java.net.UnknownHostException;
 
