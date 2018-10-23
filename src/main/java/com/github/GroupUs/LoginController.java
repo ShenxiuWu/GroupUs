@@ -1,4 +1,4 @@
-package sample;
+package com.github.GroupUs;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Modality;
 import javafx.stage.Window;
 import javafx.stage.Stage;
 
@@ -50,7 +49,7 @@ public class LoginController {
 
         //showAlert(Alert.AlertType.CONFIRMATION, loginpane.getScene().getWindow(), "Registration Successful!", "Welcome " + logname.getText());
 
-        Parent newroot = FXMLLoader.load(getClass().getResource("/sample/status.fxml"));
+        Parent newroot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
         Stage formerstage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         formerstage.setScene(new Scene(newroot, 600, 400));
 

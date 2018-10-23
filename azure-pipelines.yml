@@ -9,10 +9,10 @@ pool:
 steps:
 - task: Maven@3
   inputs:
-    mavenPomFile: './src/main/pom.xml'
+    mavenPomFile: './pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.10'
+    jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
