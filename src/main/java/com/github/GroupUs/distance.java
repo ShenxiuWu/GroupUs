@@ -6,7 +6,6 @@ import com.google.maps.DistanceMatrixApi;
 import com.google.maps.GeoApiContext;
 import com.google.maps.GeocodingApi;
 import com.google.maps.model.*;
-import com.sun.deploy.util.StringUtils;
 
 /*
  *  The Google Maps Geolocation API returns a location and accuracy radius based on information
