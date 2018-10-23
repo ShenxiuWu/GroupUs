@@ -7,12 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="groupus" />
-        <module name="main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="groupus" target="8" />
-      <module name="main" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
