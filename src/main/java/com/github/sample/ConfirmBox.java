@@ -1,4 +1,4 @@
-package sample;
+package com.github.sample;
 
 import javafx.stage.*;
 import javafx.scene.*;

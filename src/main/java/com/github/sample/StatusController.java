@@ -1,4 +1,4 @@
-package sample;
+package com.github.sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +11,7 @@ public class StatusController {
 
     @FXML
     private void backtofirst(ActionEvent actionEvent) throws Exception {
-        Parent newroot = FXMLLoader.load(getClass().getResource("/sample/login.fxml"));
+        Parent newroot = FXMLLoader.load(getClass().getResource("login.fxml"));
         Stage formerstage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         formerstage.setScene(new Scene(newroot, 600, 400));
     }

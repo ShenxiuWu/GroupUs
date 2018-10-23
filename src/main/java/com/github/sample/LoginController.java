@@ -1,4 +1,4 @@
-package sample;
+package com.github.sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,7 +50,7 @@ public class LoginController {
 
         //showAlert(Alert.AlertType.CONFIRMATION, loginpane.getScene().getWindow(), "Registration Successful!", "Welcome " + logname.getText());
 
-        Parent newroot = FXMLLoader.load(getClass().getResource("/sample/status.fxml"));
+        Parent newroot = FXMLLoader.load(getClass().getResource("status.fxml"));
         Stage formerstage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         formerstage.setScene(new Scene(newroot, 600, 400));
 
