@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.*;
 import javafx.stage.Stage;
 
-
 public class StatusController {
 
     @FXML
