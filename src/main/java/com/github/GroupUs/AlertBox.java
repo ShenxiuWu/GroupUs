@@ -1,4 +1,4 @@
-package com.github.sample;
+package com.github.GroupUs;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
