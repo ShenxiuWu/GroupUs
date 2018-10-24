@@ -1,5 +1,7 @@
 package com.github.GroupUs;
 
+import com.github.GroupUs.factory.ServiceFactory;
+import com.github.GroupUs.vo.UserInfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +16,7 @@ import javafx.stage.Window;
 import javafx.stage.Stage;
 
 public class LoginController {
+    UserInfo vo = new UserInfo();
 
     @FXML
     private GridPane loginpane;
@@ -32,18 +35,23 @@ public class LoginController {
             showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please enter your name");
             return;
         } else {
+
             System.out.println(logname.getText());
         }
         if(logemail.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please enter your email id");
             return;
         } else {
+
+            vo.setEmail(logemail.getText());
             System.out.println(logemail.getText());
         }
         if(loginpw.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please enter a password");
             return;
         } else {
+            vo.setPassword(loginpw.getText());
+            ServiceFactory.getIUserServiceInstance().insert(vo);
             System.out.println(loginpw.getText());
         }
 

@@ -1,5 +1,7 @@
 package com.github.GroupUs;
 
+import com.github.GroupUs.factory.ServiceFactory;
+import com.github.GroupUs.vo.UserInfo;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,8 +21,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import junit.framework.TestCase;
 
 public class Main extends Application {
+    public static int num = 10;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -32,5 +36,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+
     }
 }

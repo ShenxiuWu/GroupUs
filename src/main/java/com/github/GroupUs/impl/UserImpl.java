@@ -41,8 +41,8 @@ public class UserImpl implements IUserDAO{
         UpdateResult resultC = this.col.updateMany(condA, condC);
         UpdateResult resultD = this.col.updateMany(condA, condD);
         UpdateResult resultE = this.col.updateMany(condA, condE);
-        return (resultB.getModifiedCount() == 1) && (resultC.getModifiedCount() == 1) &&
-                (resultD.getModifiedCount() == 1) && (resultE.getModifiedCount() == 1);
+        return (resultB.getModifiedCount() == 1) || (resultC.getModifiedCount() == 1) ||
+                (resultD.getModifiedCount() == 1) || (resultE.getModifiedCount() == 1);
     }
 
     @Override
