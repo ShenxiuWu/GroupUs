@@ -53,9 +53,7 @@ public class UserInfo implements Serializable {
         return email;
     }
 
-    public String getPassword() {
-        return password;
-    }
+    public String getPassword() { return password; }
 
     public List<Integer> getJoined() {
         return joined;
