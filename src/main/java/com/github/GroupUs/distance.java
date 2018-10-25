@@ -18,24 +18,7 @@ import com.google.maps.model.*;
  */
 public class distance {
     public static void main(String[] args) {
-        geoCoding();
         distanceMatirx();
-    }
-    public static String geoCoding() {
-        GeoApiContext context = new GeoApiContext.Builder()
-                .apiKey("AIzaSyBB2Mz7wexVz5mlpom9NqQc--6bf5tPbfo")
-                .build();
-        String res = "";
-        try {
-            GeocodingResult[] results = GeocodingApi.geocode(context,
-                    "Columbia University").await();
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            System.out.println(gson.toJson(results[0].addressComponents));
-            res = gson.toJson(results[0].addressComponents);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return res;
     }
 
     public static String distanceMatirx() {
