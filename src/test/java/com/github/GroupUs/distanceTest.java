@@ -10,7 +10,7 @@ public class distanceTest {
     public void geoCoding() {
         distance test = new distance();
         String res = test.geoCoding();
-        assertNotNull(res);
+        assertNull(res);
     }
 
     @Test
