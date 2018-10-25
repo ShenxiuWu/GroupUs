@@ -56,8 +56,8 @@ public class UserImpl implements IUserDAO{
             Document doc = cursor.next();
             vo.setEmail(doc.getString("email"));
             vo.setPassword(doc.getString("password"));
-            vo.setJoined((List<Integer>)doc.get("joined"));
-            vo.setPosted((List<Integer>)doc.get("posted"));
+            vo.setJoined((List<String>)doc.get("joined"));
+            vo.setPosted((List<String>)doc.get("posted"));
             vo.setName(doc.getString("name"));
         }
         return vo;

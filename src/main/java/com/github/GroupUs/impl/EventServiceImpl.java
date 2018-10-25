@@ -5,7 +5,12 @@ import com.github.GroupUs.factory.DAOFactory;
 import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.service.IEventService;
 import com.github.GroupUs.vo.EventInfo;
+import com.github.GroupUs.vo.UserInfo;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 import static com.github.GroupUs.Main.userId;
 
 public class EventServiceImpl implements IEventService {
@@ -22,7 +27,11 @@ public class EventServiceImpl implements IEventService {
                 vo.setCreatedAt(createdAt);
                 vo.setModifiedAt(modifiedAt);
                 vo.setEventId(eventId);
-                //TODO: update user entity posted list
+                UserInfo user = ServiceFactory.getIUserServiceInstance().get(creator);
+                List<String> userPosted = user.getPosted();
+                userPosted.add(eventId);
+                user.setPosted(userPosted);
+                ServiceFactory.getIUserServiceInstance().update(user);
                 return DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).doCreate(vo);
             }
             return false;

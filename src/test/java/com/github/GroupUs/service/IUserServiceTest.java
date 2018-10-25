@@ -15,12 +15,12 @@ public class IUserServiceTest {
     @Test
     public void insert() {
         UserInfo vo = new UserInfo();
-        List<Integer> j = new ArrayList<Integer>();
-        j.add(1);
-        j.add(2);
-        List<Integer> p = new ArrayList<Integer>();
-        p.add(3);
-        p.add(4);
+        List<String> j = new ArrayList<String>();
+        j.add("xx");
+        j.add("yy");
+        List<String> p = new ArrayList<String>();
+        p.add("zz");
+        p.add("xx");
         vo.setEmail("hello123@gmail.com");
         vo.setPassword("999");
         vo.setPosted(j);
@@ -36,12 +36,12 @@ public class IUserServiceTest {
     @Test
     public void update() {
         UserInfo vo = new UserInfo();
-        List<Integer> j = new ArrayList<Integer>();
-        j.add(1);
-        j.add(2);
-        List<Integer> p = new ArrayList<Integer>();
-        p.add(3);
-        p.add(4);
+        List<String> j = new ArrayList<String>();
+        j.add("xx");
+        j.add("yy");
+        List<String> p = new ArrayList<String>();
+        p.add("zz");
+        p.add("xx");
         vo.setEmail("hello123@gmail.com");
         vo.setPassword("123456");
         vo.setPosted(j);
@@ -57,12 +57,12 @@ public class IUserServiceTest {
     @Test
     public void get() {
         UserInfo vo = new UserInfo();
-        List<Integer> j = new ArrayList<Integer>();
-        j.add(1);
-        j.add(2);
-        List<Integer> p = new ArrayList<Integer>();
-        p.add(3);
-        p.add(4);
+        List<String> j = new ArrayList<String>();
+        j.add("xx");
+        j.add("yy");
+        List<String> p = new ArrayList<String>();
+        p.add("zz");
+        p.add("xx");
         vo.setEmail("rg3105@gmail.com");
         vo.setPassword("123456");
         vo.setPosted(j);
