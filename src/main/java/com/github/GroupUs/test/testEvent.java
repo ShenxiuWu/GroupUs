@@ -14,18 +14,22 @@ public class testEvent {
     }
 
     public void testInsert() {
-        userId = "testId";
+        userId = "rz2390@columbia.edu";
         try {
             boolean res = ServiceFactory.getIEventServiceInstance().insert(vo);
             System.out.println(res);
-        } catch (Exception e) { }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void testFindByEventId() {
         String eventId = "testEventId";
         try {
             EventInfo res = ServiceFactory.getIEventServiceInstance().get(eventId);
-            System.out.println(res.getEventId());
-        } catch (Exception e) { }
+            System.out.println(res);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
