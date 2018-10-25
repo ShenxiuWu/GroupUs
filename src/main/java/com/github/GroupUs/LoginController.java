@@ -69,11 +69,12 @@ public class LoginController {
 
     @FXML
     private void signIn(ActionEvent actionEvent) throws Exception {
+        //check empty item
         boolean empty_check = checkEmpty();
         if (!empty_check) {
             return ;
         }
-
+        // check account and password
         if (ServiceFactory.getIUserServiceInstance().get(logemail.getText())== null ) {
             System.out.println("Account not found ");
             showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Account Info/Password Wrong");
@@ -83,7 +84,7 @@ public class LoginController {
             showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Account Info/Password Wrong");
             return ;
         }
-        showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign In Successfully");
+        showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign in Successfully");
         Parent newroot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
         Stage formerstage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         formerstage.setScene(new Scene(newroot, 600, 400));
@@ -97,12 +98,21 @@ public class LoginController {
             return;
         }
         if (ServiceFactory.getIUserServiceInstance().get(logemail.getText()) != null){
-            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Account Exist! Please Sign In.");
+            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Account Exist! Please Sign in.");
             return;
         }
-
-
-
+        String pattern1 = ".*@columbia.edu";
+        String pattern2 = ".*@gmail.com";
+        boolean isMatch1 = Pattern.matches(pattern1, logemail.getText());
+        boolean isMatch2 = Pattern.matches(pattern2, logemail.getText());
+        if (!isMatch1 && !isMatch2){
+            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Use columbia/gmail email address");
+            return;
+        }
+        vo.setEmail(logemail.getText());
+        vo.setPassword(loginpw.getText());
+        ServiceFactory.getIUserServiceInstance().insert(vo);
+        showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign up Successfully");
 
         Parent newroot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
         Stage formerstage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
