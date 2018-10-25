@@ -1,7 +1,6 @@
 package com.github.GroupUs;
 
 import com.github.GroupUs.factory.ServiceFactory;
-import com.github.GroupUs.service.IUserService;
 import com.github.GroupUs.vo.UserInfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.*;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -28,7 +26,6 @@ public class LoginController {
     private TextField logemail;
     @FXML
     private PasswordField loginpw;
-
 
 
     @FXML
@@ -117,9 +114,6 @@ public class LoginController {
         Parent newroot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
         Stage formerstage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         formerstage.setScene(new Scene(newroot, 600, 400));
-
-
-
 
     }
 
