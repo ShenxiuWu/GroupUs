@@ -44,6 +44,8 @@ public class LoginController {
 
             vo.setEmail(logemail.getText());
             System.out.println(logemail.getText());
+            UserInfo test = ServiceFactory.getIUserServiceInstance().get("ruige915@gmail.com");
+            System.out.println(test.getPassword());
         }
         if(loginpw.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please enter a password");
