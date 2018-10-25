@@ -2,6 +2,7 @@ package com.github.GroupUs.test;
 
 import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.vo.EventInfo;
+import static com.github.GroupUs.Main.userId;
 
 public class testEvent {
     EventInfo vo = new EventInfo();
@@ -13,8 +14,7 @@ public class testEvent {
     }
 
     public void testInsert() {
-        String eventId = "testEventId";
-        vo.setEventId(eventId);
+        userId = "testId";
         try {
             boolean res = ServiceFactory.getIEventServiceInstance().insert(vo);
             System.out.println(res);
