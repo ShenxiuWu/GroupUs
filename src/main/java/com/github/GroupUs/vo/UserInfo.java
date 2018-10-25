@@ -1,6 +1,7 @@
 package com.github.GroupUs.vo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 //User
@@ -17,11 +18,11 @@ import java.util.List;
 public class UserInfo implements Serializable {
     private String email;
     private String password;
-    private List<Integer> joined;
-    private List<Integer> posted;
+    private List<String> joined = new ArrayList<>();
+    private List<String> posted = new ArrayList<>();
     private String name;
     public UserInfo() {}
-    public UserInfo(String email, String password, List<Integer> joined, List<Integer> posted, String name) {
+    public UserInfo(String email, String password, List<String> joined, List<String> posted, String name) {
         this.email = email;
         this.password = password;
         this.joined = joined;
@@ -37,11 +38,11 @@ public class UserInfo implements Serializable {
         this.password = password;
     }
 
-    public void setJoined(List<Integer> joined) {
+    public void setJoined(List<String> joined) {
         this.joined = joined;
     }
 
-    public void setPosted(List<Integer> posted) {
+    public void setPosted(List<String> posted) {
         this.posted = posted;
     }
 
@@ -53,15 +54,13 @@ public class UserInfo implements Serializable {
         return email;
     }
 
-    public String getPassword() {
-        return password;
-    }
+    public String getPassword() { return password; }
 
-    public List<Integer> getJoined() {
+    public List<String> getJoined() {
         return joined;
     }
 
-    public List<Integer> getPosted() {
+    public List<String> getPosted() {
         return posted;
     }
 

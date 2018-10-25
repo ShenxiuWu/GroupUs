@@ -20,7 +20,7 @@ import java.util.Date;
 
 @SuppressWarnings("serial")
 public class EventInfo implements Serializable {
-    private Integer eventId;
+    private String eventId;
     private String creator;
     private String category;
     private String subject;
@@ -30,8 +30,12 @@ public class EventInfo implements Serializable {
     private String location;
     private String geo;
     private String memo;
+    private Date createdAt;
+    private Date modifiedAt;
 
-    public EventInfo(Integer eventId, String creator, String category, String subject, String description, Date start, Date end, String location, String geo, String memo) {
+    public EventInfo() { };
+
+    public EventInfo(String eventId, String creator, String category, String subject, String description, Date start, Date end, String location, String geo, String memo, Date createdAt, Date modifiedAt) {
         this.eventId = eventId;
         this.creator = creator;
         this.category = category;
@@ -42,9 +46,11 @@ public class EventInfo implements Serializable {
         this.location = location;
         this.geo = geo;
         this.memo = memo;
+        this.createdAt = createdAt;
+        this.modifiedAt = modifiedAt;
     }
 
-    public void setEventId(Integer eventId) {
+    public void setEventId(String eventId) {
         this.eventId = eventId;
     }
 
@@ -84,7 +90,11 @@ public class EventInfo implements Serializable {
         this.memo = memo;
     }
 
-    public Integer getEventId() {
+    public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
+
+    public void setModifiedAt(Date modifiedAt) { this.modifiedAt = modifiedAt; }
+
+    public String getEventId() {
         return eventId;
     }
 
@@ -123,5 +133,9 @@ public class EventInfo implements Serializable {
     public String getMemo() {
         return memo;
     }
+
+    public Date getCreatedAt() { return createdAt; }
+
+    public Date getModifiedAt() { return modifiedAt; }
 }
 
