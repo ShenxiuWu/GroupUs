@@ -11,5 +11,6 @@ public class distanceTest {
         distance test = new distance();
         String res = test.distanceMatirx();
         assertNull(res);
+        assertNull(res);
     }
 }
