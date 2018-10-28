@@ -28,6 +28,9 @@ public class EventServiceImpl implements IEventService {
                 vo.setModifiedAt(modifiedAt);
                 vo.setEventId(eventId);
                 UserInfo user = ServiceFactory.getIUserServiceInstance().get(creator);
+                if(user == null) {
+                    return false;
+                }
                 List<String> userPosted = user.getPosted();
                 userPosted.add(eventId);
                 user.setPosted(userPosted);
