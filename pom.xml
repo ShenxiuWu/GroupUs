@@ -58,8 +58,8 @@
                 <configuration>
                     <outputDirectory>target/site/jacoco</outputDirectory>
                         <excludes>
-                            <exclude>com.github.GroupUs.vo</exclude>
-                            <exclude>com.github.GroupUs.test</exclude>
+                            <exclude>com.github.GroupUs.vo.*</exclude>
+                            <exclude>com.github.GroupUs.test/**/*</exclude>
                         </excludes>
                 </configuration>
                 <executions>
