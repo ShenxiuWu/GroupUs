@@ -9,14 +9,26 @@ public class testEvent {
 
     public static void main(String[] args) {
         testEvent testObj = new testEvent();
-        testObj.testInsert();
-        testObj.testFindByEventId();
+        // testObj.testInsert();
+        testObj.testJoin();
+        // testObj.testFindByEventId();
     }
 
     public void testInsert() {
         userId = "rz2390@columbia.edu";
         try {
             boolean res = ServiceFactory.getIEventServiceInstance().insert(vo);
+            System.out.println(res);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void testJoin() {
+        userId = "rz2390@columbia.edu";
+        String eventId = "rz2390@columbia.eduSun Oct 28 14:07:06 EDT 2018";
+        try {
+            boolean res = ServiceFactory.getIEventServiceInstance().join(userId, eventId);
             System.out.println(res);
         } catch (Exception e) {
             e.printStackTrace();

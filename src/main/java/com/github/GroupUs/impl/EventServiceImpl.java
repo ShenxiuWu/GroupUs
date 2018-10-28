@@ -52,4 +52,26 @@ public class EventServiceImpl implements IEventService {
             this.dbc.close();
         }
     }
+
+    @Override
+    public boolean join(String userId, String eventId) throws Exception {
+        try {
+            String creator = userId;
+            UserInfo user = ServiceFactory.getIUserServiceInstance().get(creator);
+            List<String> userJoined = user.getJoined();
+            if (userJoined.contains(eventId)) {
+                System.out.println("event already exist, failed to join");
+                return false;
+            } else {
+                System.out.println("join success");
+            }
+            userJoined.add(eventId);
+            user.setJoined(userJoined);
+            return ServiceFactory.getIUserServiceInstance().update(user);
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.dbc.close();
+        }
+    }
 }
