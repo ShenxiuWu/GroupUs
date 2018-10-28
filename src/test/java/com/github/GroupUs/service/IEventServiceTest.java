@@ -28,7 +28,18 @@ public class IEventServiceTest {
     @Test
     public void get() {
         try {
-            TestCase.assertNull(ServiceFactory.getIEventServiceInstance().get("wrongEventId"));
+            TestCase.assertNotNull(ServiceFactory.getIEventServiceInstance().get("rz2390@columbia.eduSun Oct 28 17:02:50 EDT 2018"));
+            vo = ServiceFactory.getIEventServiceInstance().get("rz2390@columbia.eduSun Oct 28 17:02:50 EDT 2018");
+            TestCase.assertEquals("testSubject", vo.getSubject());
+            TestCase.assertEquals("rz2390@columbia.edu", vo.getCreator());
+            TestCase.assertEquals("testMemo", vo.getMemo());
+            TestCase.assertEquals("testDescription", vo.getDescription());
+            TestCase.assertEquals("Study", vo.getCategory());
+            TestCase.assertEquals(null, vo.getGeo());
+            TestCase.assertEquals(vo.getStart(), vo.getStart());
+            TestCase.assertEquals(vo.getEnd(), vo.getEnd());
+            TestCase.assertEquals(vo.getCreatedAt(), vo.getCreatedAt());
+            TestCase.assertEquals(vo.getModifiedAt(), vo.getModifiedAt());
         } catch (Exception e){
             e.printStackTrace();
         }
