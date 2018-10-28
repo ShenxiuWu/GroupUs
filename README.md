@@ -24,3 +24,4 @@ test2
 test3
 
 test from pipeline
+test from pipeline2
