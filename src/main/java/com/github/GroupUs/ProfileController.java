@@ -13,6 +13,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ProfileController {
+
+
+    //    String userId = getText();
+    //    list of joined event Obj = ServiceFactory.getIUserServiceInstance().getPostedEvent(userId);
+    //    list of posted event Obj = ServiceFactory.getIUserServiceInstance().getJoinedEvent(userId);
+    //    user Obj = ServiceFactory.getIUserServiceInstance().get(userId);
+
+
     @FXML
     private ListView postList;
     @FXML

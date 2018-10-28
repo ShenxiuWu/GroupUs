@@ -1,6 +1,9 @@
 package com.github.GroupUs.service;
 
+import com.github.GroupUs.vo.EventInfo;
 import com.github.GroupUs.vo.UserInfo;
+
+import java.util.List;
 
 public interface IUserService {
     /**
@@ -28,5 +31,8 @@ public interface IUserService {
      * @throws Exception
      */
     public UserInfo get(String email) throws Exception;
+
+    public List<EventInfo> getPostedEvent(String email) throws Exception;
+    public List<EventInfo> getJoinedEvent(String email) throws Exception;
 
 }
