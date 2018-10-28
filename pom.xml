@@ -55,13 +55,6 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.7.7.201606060606</version>
-                <configuration>
-                    <outputDirectory>target/site/jacoco</outputDirectory>
-                        <excludes>
-                            <exclude>com.github.GroupUs.vo.*</exclude>
-                            <exclude>com.github.GroupUs.test/**/*</exclude>
-                        </excludes>
-                </configuration>
                 <executions>
                     <execution>
                         <id>default-prepare-agent</id>
