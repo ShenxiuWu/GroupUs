@@ -25,3 +25,4 @@ test3
 
 test from pipeline
 test from pipeline2
+test from pipeline3
