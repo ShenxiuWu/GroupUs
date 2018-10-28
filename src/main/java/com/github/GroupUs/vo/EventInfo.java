@@ -35,20 +35,20 @@ public class EventInfo implements Serializable {
 
     public EventInfo() { };
 
-    public EventInfo(String eventId, String creator, String category, String subject, String description, Date start, Date end, String location, String geo, String memo, Date createdAt, Date modifiedAt) {
-        this.eventId = eventId;
-        this.creator = creator;
-        this.category = category;
-        this.subject = subject;
-        this.description = description;
-        this.start = start;
-        this.end = end;
-        this.location = location;
-        this.geo = geo;
-        this.memo = memo;
-        this.createdAt = createdAt;
-        this.modifiedAt = modifiedAt;
-    }
+//    public EventInfo(String eventId, String creator, String category, String subject, String description, Date start, Date end, String location, String geo, String memo, Date createdAt, Date modifiedAt) {
+//        this.eventId = eventId;
+//        this.creator = creator;
+//        this.category = category;
+//        this.subject = subject;
+//        this.description = description;
+//        this.start = start;
+//        this.end = end;
+//        this.location = location;
+//        this.geo = geo;
+//        this.memo = memo;
+//        this.createdAt = createdAt;
+//        this.modifiedAt = modifiedAt;
+//    }
 
     public void setEventId(String eventId) {
         this.eventId = eventId;

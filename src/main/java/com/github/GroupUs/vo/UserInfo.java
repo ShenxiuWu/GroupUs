@@ -22,13 +22,13 @@ public class UserInfo implements Serializable {
     private List<String> posted = new ArrayList<>();
     private String name;
     public UserInfo() {}
-    public UserInfo(String email, String password, List<String> joined, List<String> posted, String name) {
-        this.email = email;
-        this.password = password;
-        this.joined = joined;
-        this.posted = posted;
-        this.name = name;
-    }
+//    public UserInfo(String email, String password, List<String> joined, List<String> posted, String name) {
+//        this.email = email;
+//        this.password = password;
+//        this.joined = joined;
+//        this.posted = posted;
+//        this.name = name;
+//    }
 
     public void setEmail(String email) {
         this.email = email;
