@@ -23,6 +23,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import junit.framework.TestCase;
 
+import java.util.Locale;
+
+
 public class Main extends Application {
     public static int num = 10;
 

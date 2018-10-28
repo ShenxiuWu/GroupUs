@@ -8,16 +8,37 @@ import javafx.stage.Stage;
 
 public class StatusController {
 
+
     @FXML
-    private void backtofirst(ActionEvent actionEvent) throws Exception {
-        Parent newroot = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
-        Stage formerstage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        formerstage.setScene(new Scene(newroot, 600, 400));
+    private void gotoProfile(ActionEvent actionEvent) throws Exception{
+        //user id
+        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/profile.fxml"));
+        Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        formerStage.setScene(new Scene(newRoot, 600, 400));
+
     }
 
     @FXML
-    private void showact1(ActionEvent actionEvent) {
-        AlertBox.display("Activity list", "This is all the posted activity");
+    private void gotoPost(ActionEvent actionEvent) throws Exception{
+        // user id
+        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/post.fxml"));
+        Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        formerStage.setScene(new Scene(newRoot, 600, 400));
+    }
 
+
+    @FXML
+    private void gotoJoin(ActionEvent actionEvent) throws Exception {
+        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/join.fxml"));
+        Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        formerStage.setScene(new Scene(newRoot, 600, 400));
+    }
+
+    @FXML
+    private void logout(ActionEvent actionEvent) throws Exception {
+        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+        Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        formerStage.setScene(new Scene(newRoot, 600, 400));
+        // user id set to initial ?
     }
 }
