@@ -8,6 +8,8 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
+
+import java.util.Date;
 import java.util.List;
 
 public class EventImpl implements IEventDAO{
@@ -39,18 +41,25 @@ public class EventImpl implements IEventDAO{
     @Override
     public EventInfo findByEventId(String eventId) throws Exception {
         EventInfo vo = null;
-//        BasicDBObject cond = new BasicDBObject();
-//        cond.put("email", email);
-//        MongoCursor<Document> cursor = this.col.find(cond).iterator();
-//        while (cursor.hasNext()) {
-//            vo = new UserInfo();
-//            Document doc = cursor.next();
-//            vo.setEmail(doc.getString("email"));
-//            vo.setPassword(doc.getString("password"));
-//            vo.setJoined((List<Integer>)doc.get("joined"));
-//            vo.setPosted((List<Integer>)doc.get("posted"));
-//            vo.setName(doc.getString("name"));
-//        }
+        BasicDBObject cond = new BasicDBObject();
+        cond.put("eventId", eventId);
+        MongoCursor<Document> cursor = this.col.find(cond).iterator();
+        while (cursor.hasNext()) {
+            vo = new EventInfo();
+            Document doc = cursor.next();
+            vo.setEventId(doc.getString("eventId"));
+            vo.setCategory(doc.getString("category"));
+            vo.setCreatedAt((Date)doc.get("createdAt"));
+            vo.setCreator(doc.getString("creator"));
+            vo.setModifiedAt((Date)doc.get("modifiedAt"));
+            vo.setDescription(doc.getString("description"));
+            vo.setStart((Date)doc.get("start"));
+            vo.setEnd((Date)doc.get("end"));
+            vo.setLocation(doc.getString("location"));
+            vo.setGeo(doc.getString("geo"));
+            vo.setSubject(doc.getString("subject"));
+            vo.setMemo(doc.getString("memo"));
+        }
         return vo;
     }
 }

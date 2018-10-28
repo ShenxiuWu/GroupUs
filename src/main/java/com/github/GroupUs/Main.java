@@ -27,7 +27,8 @@ import java.util.Locale;
 
 
 public class Main extends Application {
-    public static int num = 10;
+
+    public static String userId = null;
 
     @Override
     public void start(Stage primaryStage) throws Exception{

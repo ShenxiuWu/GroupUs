@@ -6,6 +6,9 @@ import com.github.GroupUs.factory.DAOFactory;
 import com.github.GroupUs.service.IUserService;
 import com.github.GroupUs.vo.UserInfo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserServiceImpl implements IUserService {
     private DatabaseConnection dbc = new DatabaseConnection();
     @Override
