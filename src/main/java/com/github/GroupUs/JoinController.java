@@ -67,7 +67,14 @@ public class JoinController {
         }*/
         eventTable.getItems().clear();
         eventTable.getColumns().clear();
-        List<EventInfo> searchedEvent = ServiceFactory.getIUserServiceInstance().getPostedEvent("trypost123@columbia.edu");
+
+        RadioButton selectedRadioButton = (RadioButton) type.getSelectedToggle();
+        System.out.println(selectedRadioButton.getText());
+        String category = selectedRadioButton.getText();
+        String location = locationText.getText();
+        List<EventInfo> searchedEvent = ServiceFactory.getIEventServiceInstance().searchByCategory(category, location);
+
+        //List<EventInfo> searchedEvent = ServiceFactory.getIUserServiceInstance().getPostedEvent("trypost123@columbia.edu");
         ObservableList<EventInfo> searcheditem = FXCollections.observableList(searchedEvent);
 
         TableColumn<EventInfo, String> categoryColumn1 = new TableColumn<>("Category");
@@ -87,13 +94,6 @@ public class JoinController {
 
         eventTable.setItems(searcheditem);
         eventTable.getColumns().addAll(categoryColumn1,subjectColumn1,locationColumn1,startColumn1,endColumn1);
-        
-        /*String category = "study";
-        String location = "columbia";
-        List<EventInfo> searchedEvent = ServiceFactory.getIEventServiceInstance().searchByCategory(category, location);*/
-
-        /*RadioButton selectedRadioButton = (RadioButton) type.getSelectedToggle();
-        System.out.println(selectedRadioButton.getText());*/
 
     }
 
