@@ -1,6 +1,7 @@
 package com.github.GroupUs.service;
 
 import com.github.GroupUs.factory.ServiceFactory;
+import com.github.GroupUs.vo.EventInfo;
 import com.github.GroupUs.vo.UserInfo;
 import junit.framework.TestCase;
 import org.junit.Test;
@@ -8,6 +9,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.github.GroupUs.Main.userId;
 import static org.junit.Assert.*;
 
 public class IUserServiceTest {
@@ -71,6 +73,26 @@ public class IUserServiceTest {
         try {
             TestCase.assertNotNull(ServiceFactory.getIUserServiceInstance().get(vo.getEmail()));
         } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testGetJoinedEvent() {
+        userId = "rz2390@columbia.edu";
+        try {
+            TestCase.assertNotNull(ServiceFactory.getIUserServiceInstance().getJoinedEvent(userId));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testGetPostedEvent() {
+        userId = "rz2390@columbia.edu";
+        try {
+            TestCase.assertNotNull(ServiceFactory.getIUserServiceInstance().getPostedEvent(userId));
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

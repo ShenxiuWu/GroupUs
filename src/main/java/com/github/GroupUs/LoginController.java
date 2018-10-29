@@ -15,6 +15,8 @@ import javafx.stage.Window;
 import javafx.stage.Stage;
 import java.util.regex.*;
 
+import static com.github.GroupUs.Main.userId;
+
 public class LoginController {
     UserInfo vo = new UserInfo();
 
@@ -27,49 +29,10 @@ public class LoginController {
     @FXML
     private PasswordField loginpw;
 
-
-    @FXML
-    private void pressbutton(ActionEvent actionEvent) throws Exception {
-        if(logname.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please enter your name");
-            return;
-        } else {
-
-            System.out.println(logname.getText());
-        }
-        if(logemail.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please enter your email id");
-            return;
-        } else {
-
-            vo.setEmail(logemail.getText());
-            System.out.println(logemail.getText());
-            UserInfo test = ServiceFactory.getIUserServiceInstance().get("ruige915@gmail.com");
-            System.out.println(test.getPassword());
-        }
-        if(loginpw.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please enter a password");
-            return;
-        } else {
-            vo.setPassword(loginpw.getText());
-            ServiceFactory.getIUserServiceInstance().insert(vo);
-            System.out.println(loginpw.getText());
-        }
-
-        //showAlert(Alert.AlertType.CONFIRMATION, loginpane.getScene().getWindow(), "Registration Successful!", "Welcome " + logname.getText());
-
-        Parent newroot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
-        Stage formerstage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        formerstage.setScene(new Scene(newroot, 600, 400));
-
-    }
-
-
-
     @FXML
     private void signIn(ActionEvent actionEvent) throws Exception {
         //check empty item
-        boolean empty_check = checkEmpty();
+        boolean empty_check = checkEmpty1();
         if (!empty_check) {
             return ;
         }
@@ -84,15 +47,17 @@ public class LoginController {
             return ;
         }
         showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign in Successfully");
-        Parent newroot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
-        Stage formerstage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        formerstage.setScene(new Scene(newroot, 600, 400));
+        userId = logemail.getText();
+        // user id get value
+        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
+        Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        formerStage.setScene(new Scene(newRoot, 600, 400));
 
     }
 
     @FXML
     private void signUp(ActionEvent actionEvent) throws Exception {
-        boolean empty_check = checkEmpty();
+        boolean empty_check = checkEmpty2();
         if (!empty_check) {
             return;
         }
@@ -112,14 +77,25 @@ public class LoginController {
         vo.setPassword(loginpw.getText());
         ServiceFactory.getIUserServiceInstance().insert(vo);
         showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign up Successfully");
-
-        Parent newroot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
-        Stage formerstage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        formerstage.setScene(new Scene(newroot, 600, 400));
+        // user id get value
+        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
+        Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        formerStage.setScene(new Scene(newRoot, 600, 400));
 
     }
+    private boolean checkEmpty1() throws Exception{
+        if(logemail.getText().isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please enter your email id");
+            return false;
+        }
+        if(loginpw.getText().isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please enter a password");
+            return false;
+        }
+        return true;
+    }
 
-    private boolean checkEmpty() throws Exception{
+    private boolean checkEmpty2() throws Exception{
         if(logname.getText().isEmpty()) {
             showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please enter your name");
             return false;
@@ -143,5 +119,14 @@ public class LoginController {
         alert.initOwner(owner);
         alert.showAndWait();
     }
+   // use to quick swtich to test
+    @FXML
+    private void testJoin(ActionEvent actionEvent) throws Exception{
+        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
+        Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        formerStage.setScene(new Scene(newRoot, 600, 400));
+    }
+
+
 
 }
