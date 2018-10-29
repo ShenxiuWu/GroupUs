@@ -9,7 +9,7 @@ public class distanceTest {
     @Test
     public void distanceMatirx() {
         distance test = new distance();
-        String res = test.distanceMatirx();
+        Integer res = test.distanceMatirx(new String[] {}, new String [] {});
         assertNotNull(res);
     }
 }

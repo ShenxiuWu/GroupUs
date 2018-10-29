@@ -1,7 +1,14 @@
 package com.github.GroupUs.vo;
 
+import com.github.GroupUs.distance;
+
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.Date;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 
 //{
@@ -14,7 +21,6 @@ import java.util.Date;
 //        “Start”: 12345,
 //        “End”: 23456,
 //        “Location”: “Columbia University”,
-//        “Geo”: 123, 456,
 //        “Memo”: “NWC”
 //        }
 
@@ -28,14 +34,14 @@ public class EventInfo implements Serializable {
     private Date start;
     private Date end;
     private String location;
-    private String geo;
+    private String usrCurLocation;
     private String memo;
     private Date createdAt;
     private Date modifiedAt;
 
-    public EventInfo() { };
+    public EventInfo() {};
 
-    public EventInfo(String eventId, String creator, String category, String subject, String description, Date start, Date end, String location, String geo, String memo, Date createdAt, Date modifiedAt) {
+    public EventInfo(String eventId, String creator, String category, String subject, String description, Date start, Date end, String location, String usrCurLocation, String memo, Date createdAt, Date modifiedAt) {
         this.eventId = eventId;
         this.creator = creator;
         this.category = category;
@@ -44,7 +50,7 @@ public class EventInfo implements Serializable {
         this.start = start;
         this.end = end;
         this.location = location;
-        this.geo = geo;
+        this.usrCurLocation = usrCurLocation;
         this.memo = memo;
         this.createdAt = createdAt;
         this.modifiedAt = modifiedAt;
@@ -82,8 +88,8 @@ public class EventInfo implements Serializable {
         this.location = location;
     }
 
-    public void setGeo(String geo) {
-        this.geo = geo;
+    public void setUsrCurLocation(String usrCurLocation) {
+        this.usrCurLocation = usrCurLocation;
     }
 
     public void setMemo(String memo) {
@@ -126,8 +132,8 @@ public class EventInfo implements Serializable {
         return location;
     }
 
-    public String getGeo() {
-        return geo;
+    public String getUsrCurLocation() {
+        return usrCurLocation;
     }
 
     public String getMemo() {
@@ -137,5 +143,33 @@ public class EventInfo implements Serializable {
     public Date getCreatedAt() { return createdAt; }
 
     public Date getModifiedAt() { return modifiedAt; }
+
+//    @Override
+//    public int compareTo(EventInfo o) {
+//        Integer thisMeters = distance.distanceMatirx(new String [] {this.location}, new String [] {this.usrCurLocation});
+//        Integer oMeters = distance.distanceMatirx(new String [] {o.location}, new String [] {o.usrCurLocation});
+//        if (thisMeters > oMeters) {
+//            return 1;
+//        }else if (thisMeters < oMeters) {
+//            return -1;
+//        } else {
+//            return 0;
+//        }
+//    }
+    public static class SortByDistance implements Comparator<EventInfo> {
+
+    @Override
+    public int compare(EventInfo o1, EventInfo o2) {
+            Integer o1Meters = distance.distanceMatirx(new String [] {o1.location}, new String [] {o1.usrCurLocation});
+            Integer o2Meters = distance.distanceMatirx(new String [] {o2.location}, new String [] {o2.usrCurLocation});
+            if (o1Meters > o2Meters) {
+                return 1;
+            } else if (o1Meters < o2Meters) {
+                return -1;
+            } else {
+                return 0;
+        }
+        }
+    }
 }
 

@@ -6,10 +6,10 @@ import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.service.IEventService;
 import com.github.GroupUs.vo.EventInfo;
 import com.github.GroupUs.vo.UserInfo;
+import com.mongodb.BasicDBObject;
+import com.mongodb.client.result.UpdateResult;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import static com.github.GroupUs.Main.userId;
 
@@ -28,10 +28,15 @@ public class EventServiceImpl implements IEventService {
                 vo.setModifiedAt(modifiedAt);
                 vo.setEventId(eventId);
                 UserInfo user = ServiceFactory.getIUserServiceInstance().get(creator);
-                List<String> userPosted = user.getPosted();
-                userPosted.add(eventId);
-                user.setPosted(userPosted);
-                ServiceFactory.getIUserServiceInstance().update(user);
+                if (user == null) {
+                    System.out.println("user is null, no need to add posted events to");
+                } else {
+                    System.out.println(user);
+                    List<String> userPosted = user.getPosted();
+                    userPosted.add(eventId);
+                    user.setPosted(userPosted);
+                    ServiceFactory.getIUserServiceInstance().update(user);
+                }
                 return DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).doCreate(vo);
             }
             return false;
@@ -52,4 +57,29 @@ public class EventServiceImpl implements IEventService {
             this.dbc.close();
         }
     }
+
+    @Override
+    public List<EventInfo> searchByCategory(String category, String currentLocation) throws Exception {
+        try {
+            List<EventInfo> events = DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByCategory(category, currentLocation);
+            if (events != null) {
+                Calendar calendar = Calendar.getInstance();
+                Date time = calendar.getTime();
+                long timeInMillis = calendar.getTimeInMillis();
+                for (int i = 0; i < events.size(); i ++) {
+                    if (events.get(i).getEnd().getTime() > timeInMillis) {
+                        events.remove(i);
+                    }                }
+                Collections.sort(events, new EventInfo.SortByDistance());
+                return events;
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.dbc.close();
+        }
+    }
+
 }
