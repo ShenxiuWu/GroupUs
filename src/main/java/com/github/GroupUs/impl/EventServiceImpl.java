@@ -30,6 +30,7 @@ public class EventServiceImpl implements IEventService {
                 UserInfo user = ServiceFactory.getIUserServiceInstance().get(creator);
                 if (user == null) {
                     System.out.println("user is null, no need to add posted events to");
+                    return false;
                 } else {
                     System.out.println(user);
                     List<String> userPosted = user.getPosted();
@@ -51,6 +52,28 @@ public class EventServiceImpl implements IEventService {
     public EventInfo get(String eventId) throws Exception {
         try {
             return DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByEventId(eventId);
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.dbc.close();
+        }
+    }
+
+    @Override
+    public boolean join(String userId, String eventId) throws Exception {
+        try {
+            String creator = userId;
+            UserInfo user = ServiceFactory.getIUserServiceInstance().get(creator);
+            List<String> userJoined = user.getJoined();
+            if (userJoined.contains(eventId)) {
+                System.out.println("event already exist, failed to join");
+                return false;
+            } else {
+                System.out.println("join success");
+            }
+            userJoined.add(eventId);
+            user.setJoined(userJoined);
+            return ServiceFactory.getIUserServiceInstance().update(user);
         } catch (Exception e) {
             throw e;
         } finally {
@@ -81,5 +104,7 @@ public class EventServiceImpl implements IEventService {
             this.dbc.close();
         }
     }
+
+
 
 }

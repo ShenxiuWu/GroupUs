@@ -60,7 +60,11 @@ public class JoinController {
             System.out.println("Wrong");
             return;
         }
-        List<EventInfo> searchedEvent = ServiceFactory.getIUserServiceInstance().getPostedEvent("trypost123@columbia.edu");
+        
+        String category = "study";
+        String location = "columbia";
+        List<EventInfo> searchedEvent = ServiceFactory.getIEventServiceInstance().searchByCategory(category, location);
+
         RadioButton selectedRadioButton = (RadioButton) type.getSelectedToggle();
         System.out.println(selectedRadioButton.getText());
     }

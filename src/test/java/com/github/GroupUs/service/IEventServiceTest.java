@@ -35,7 +35,6 @@ public class IEventServiceTest {
             TestCase.assertEquals("testMemo", vo.getMemo());
             TestCase.assertEquals("testDescription", vo.getDescription());
             TestCase.assertEquals("Study", vo.getCategory());
-            TestCase.assertEquals(null, vo.getGeo());
             TestCase.assertEquals(vo.getStart(), vo.getStart());
             TestCase.assertEquals(vo.getEnd(), vo.getEnd());
             TestCase.assertEquals(vo.getCreatedAt(), vo.getCreatedAt());
