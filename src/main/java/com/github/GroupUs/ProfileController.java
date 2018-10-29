@@ -90,11 +90,17 @@ public class ProfileController {
     @FXML
     private void showFull(MouseEvent mouseEvent) {
         EventInfo itemSelected ;
-        if (postTable.getSelectionModel().getSelectedItem() != null ){
-            itemSelected = postTable.getSelectionModel().getSelectedItem();
-        } else{
-            itemSelected = joinTable.getSelectionModel().getSelectedItem();
-        }
+        itemSelected = postTable.getSelectionModel().getSelectedItem();
+        outputarea.setText("Category:  "+itemSelected.getCategory()+"\n"+"Subject:  "+itemSelected.getSubject()+"\n"+
+                "Location:  "+itemSelected.getLocation()+"\n"+
+                "start:  "+itemSelected.getStart()+"\n"+"end:  "+itemSelected.getEnd()+"\n"+"Memo:  "+itemSelected.getMemo()+"\n"+
+                "Description:  "+itemSelected.getDescription());
+    }
+
+    @FXML
+    private void showFull2(MouseEvent mouseEvent) {
+        EventInfo itemSelected ;
+        itemSelected = joinTable.getSelectionModel().getSelectedItem();
         outputarea.setText("Category:  "+itemSelected.getCategory()+"\n"+"Subject:  "+itemSelected.getSubject()+"\n"+
                 "Location:  "+itemSelected.getLocation()+"\n"+
                 "start:  "+itemSelected.getStart()+"\n"+"end:  "+itemSelected.getEnd()+"\n"+"Memo:  "+itemSelected.getMemo()+"\n"+

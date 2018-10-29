@@ -33,7 +33,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="joinTable" prefHeight="200.0" prefWidth="293.0" />
+                  <TableView fx:id="joinTable" onMouseClicked="#showFull2" prefHeight="200.0" prefWidth="293.0" />
                </children>
             </VBox>
          </children>
