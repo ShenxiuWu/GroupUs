@@ -13,6 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 import static com.github.GroupUs.Main.userId;
 
 public class JoinController {
@@ -52,9 +54,16 @@ public class JoinController {
     }
     //type.getSelectedToggle().getUserData().toString()
     @FXML
-    private void pressSearch(ActionEvent actionEvent) {
+    private void pressSearch(ActionEvent actionEvent) throws Exception{
 
         System.out.println("yes");
+        // Ideally:
+        // press search button => we getText() for entered location, and the dropdown box result - two string
+        // we call searchByCategory(String location, String category) and return a list of event obj
+
+        // This list of event Obj could be displayed as search results just for now
+        List<EventInfo> searchedEvent = ServiceFactory.getIUserServiceInstance().getPostedEvent("trypost123@columbia.edu");
+        
     }
 
     @FXML
