@@ -9,6 +9,7 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -30,7 +31,6 @@ public class EventImpl implements IEventDAO{
         doc.append("start", vo.getStart());
         doc.append("end", vo.getEnd());
         doc.append("location", vo.getLocation());
-        doc.append("geo", vo.getGeo());
         doc.append("memo", vo.getMemo());
         doc.append("createdAt", vo.getCreatedAt());
         doc.append("modifiedAt", vo.getModifiedAt());
@@ -56,10 +56,41 @@ public class EventImpl implements IEventDAO{
             vo.setStart((Date)doc.get("start"));
             vo.setEnd((Date)doc.get("end"));
             vo.setLocation(doc.getString("location"));
-            vo.setGeo(doc.getString("geo"));
             vo.setSubject(doc.getString("subject"));
             vo.setMemo(doc.getString("memo"));
         }
         return vo;
+    }
+
+    @Override
+    public List<EventInfo> findByCategory(String category, String currentLocation) throws Exception {
+        BasicDBObject condA = new BasicDBObject("category", category);
+        BasicDBObject condB = new BasicDBObject("$set", new BasicDBObject("usrCurLocation", currentLocation));
+        this.col.updateMany(condA, condB);
+        EventInfo vo = null;
+        BasicDBObject cond = new BasicDBObject();
+        List<Document> docs = new ArrayList<Document>();
+        List<EventInfo> events = new ArrayList<EventInfo>();
+        cond.put("category", category);
+        MongoCursor<Document> cursor = this.col.find(cond).iterator();
+        while (cursor.hasNext()) {
+            docs.add(cursor.next());
+        }
+        for (int i = 0; i < docs.size(); i ++) {
+            vo = new EventInfo();
+            vo.setEventId(docs.get(i).getString("eventId"));
+            vo.setCategory(docs.get(i).getString("category"));
+            vo.setCreatedAt((Date)docs.get(i).get("createdAt"));
+            vo.setCreator(docs.get(i).getString("creator"));
+            vo.setModifiedAt((Date)docs.get(i).get("modifiedAt"));
+            vo.setStart((Date)docs.get(i).get("start"));
+            vo.setEnd((Date)docs.get(i).get("end"));
+            vo.setLocation(docs.get(i).getString("location"));
+            vo.setUsrCurLocation(docs.get(i).getString("usrCurLocation"));
+            vo.setSubject(docs.get(i).getString("subject"));
+            vo.setMemo(docs.get(i).getString("memo"));
+            events.add(vo);
+        }
+        return events;
     }
 }
