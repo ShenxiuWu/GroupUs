@@ -54,6 +54,19 @@ public class IEventServiceTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void searchByCategory() {
+        String category = "Study";
+        String location = "Columbia University";
+        try {
+            List<EventInfo> res = ServiceFactory.getIEventServiceInstance().searchByCategory(category, location);
+            System.out.println(res);
+            TestCase.assertNotNull(res);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 
