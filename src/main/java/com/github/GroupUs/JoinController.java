@@ -8,9 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.util.List;
@@ -28,13 +26,15 @@ public class JoinController {
     private TextField locationText;
     @FXML
     private ToggleGroup type;
-
+    @FXML
+    private TableView eventTable;
 //    String eventId = getText();
 //    boolean bool = ServiceFactory.getIEventServiceInstance().join(userId, eventId);
 //    if bool == True: prompt out success, and then direct back to sign in success page; else: prompt out failed
 
     public void initialize() {
-        System.out.println("yes");
+        eventTable.setPlaceholder(new Label("No content"));
+        System.out.println("initialze step");
     }
 
     @FXML
@@ -53,17 +53,16 @@ public class JoinController {
         // user id set to initial ?
     }
     //type.getSelectedToggle().getUserData().toString()
+
     @FXML
-    private void pressSearch(ActionEvent actionEvent) throws Exception{
-
-        System.out.println("yes");
-        // Ideally:
-        // press search button => we getText() for entered location, and the dropdown box result - two string
-        // we call searchByCategory(String location, String category) and return a list of event obj
-
-        // This list of event Obj could be displayed as search results just for now
+    private void pressSearch(ActionEvent actionEvent) throws Exception {
+        if (type.getSelectedToggle() == null){
+            System.out.println("Wrong");
+            return;
+        }
         List<EventInfo> searchedEvent = ServiceFactory.getIUserServiceInstance().getPostedEvent("trypost123@columbia.edu");
-
+        RadioButton selectedRadioButton = (RadioButton) type.getSelectedToggle();
+        System.out.println(selectedRadioButton.getText());
     }
 
     @FXML

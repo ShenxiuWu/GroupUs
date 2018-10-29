@@ -30,7 +30,7 @@
       </Button>
       <TextField fx:id="locationText" layoutX="192.0" layoutY="299.0" />
       <Label layoutX="227.0" layoutY="271.0" text="Type in location" />
-      <TableView layoutX="29.0" layoutY="44.0" prefHeight="200.0" prefWidth="542.0" />
+      <TableView fx:id="eventTable" layoutX="29.0" layoutY="44.0" prefHeight="200.0" prefWidth="542.0" />
       <RadioButton fx:id="radioStudy" layoutX="74.0" layoutY="271.0" mnemonicParsing="false" text="Study">
          <toggleGroup>
             <ToggleGroup fx:id="type" />
