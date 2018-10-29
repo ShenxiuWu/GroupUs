@@ -11,6 +11,6 @@ public class distanceTest {
         distance test = new distance();
         Integer res = test.distanceMatirx(new String[] {"Butler Library"}, new String [] {"Columbia University"});
         System.out.println(res);
-        assertNull(res); //assertNotNull
+        assertNotNull(res);
     }
 }
