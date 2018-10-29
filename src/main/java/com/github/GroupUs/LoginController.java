@@ -15,6 +15,8 @@ import javafx.stage.Window;
 import javafx.stage.Stage;
 import java.util.regex.*;
 
+import static com.github.GroupUs.Main.userId;
+
 public class LoginController {
     UserInfo vo = new UserInfo();
 
@@ -45,6 +47,7 @@ public class LoginController {
             return ;
         }
         showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign in Successfully");
+        userId = logemail.getText();
         // user id get value
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
         Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();

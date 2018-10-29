@@ -87,7 +87,7 @@ public class PostController implements Initializable {
         Date endTime = Date.from(endDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
 
         // Insert event into database
-        userId = "trypost123@columbia.edu"; // only for now
+        // userId = "trypost123@columbia.edu"; // only for now
         vo.setCreator(userId);
         vo.setCategory(choiceBOX.getValue());
         vo.setSubject(subjectText.getText());

@@ -37,7 +37,7 @@ public class ProfileController {
     //
     // given a user id !
     public void initialize() throws Exception{
-        userId = "trypost123@columbia.edu";  //only for now
+        //userId = "trypost123@columbia.edu";  //only for now
         List<EventInfo> postList = ServiceFactory.getIUserServiceInstance().getPostedEvent(userId);
         List<EventInfo> joinList = ServiceFactory.getIUserServiceInstance().getJoinedEvent(userId);
         ObservableList<EventInfo> postitem = FXCollections.observableList(postList);
