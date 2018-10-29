@@ -10,6 +10,6 @@ public class distanceTest {
     public void distanceMatirx() {
         distance test = new distance();
         String res = test.distanceMatirx();
-        assertNotNull(res);
+        assertNull(res); //assertNotNull
     }
 }
