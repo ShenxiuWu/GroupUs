@@ -11,6 +11,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.stage.Window;
+
 import java.net.URL;
 import java.time.ZoneId;
 import java.util.Date;
@@ -35,6 +37,8 @@ public class PostController implements Initializable {
     private TextArea memoText;
     @FXML
     private TextArea descriptionText;
+    @FXML
+    private Button postButton;
 
     public void initialize(URL location, ResourceBundle resources) {
         //choiceBOX.getItems().removeAll(choiceBOX.getItems());
@@ -70,12 +74,20 @@ public class PostController implements Initializable {
         System.out.println(locText.getText());
         System.out.println(memoText.getText());
         System.out.println(descriptionText.getText());
+        if (subjectText.getText().isEmpty()){
+            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in subject!");
+            return ;
+        }
+        if (startDate.getValue() == null || endDate.getValue() == null){
+            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in time!");
+            return ;
+        }
 
         Date startTime = Date.from(startDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
         Date endTime = Date.from(endDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
 
         // Insert event into database
-        userId = "rz2390@columbia.edu"; // only for now
+        userId = "trypost123@columbia.edu"; // only for now
         vo.setCreator(userId);
         vo.setCategory(choiceBOX.getValue());
         vo.setSubject(subjectText.getText());
@@ -85,5 +97,19 @@ public class PostController implements Initializable {
         vo.setMemo(memoText.getText());
         vo.setDescription(descriptionText.getText());
         ServiceFactory.getIEventServiceInstance().insert(vo);
+        showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Congrats!", "You post successfully!");
+        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
+        Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        formerStage.setScene(new Scene(newRoot, 600, 400));
     }
+
+    private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.initOwner(owner);
+        alert.showAndWait();
+    }
+
 }
