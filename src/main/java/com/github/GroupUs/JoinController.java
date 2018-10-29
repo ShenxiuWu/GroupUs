@@ -63,10 +63,20 @@ public class JoinController {
 
         // This list of event Obj could be displayed as search results just for now
         List<EventInfo> searchedEvent = ServiceFactory.getIUserServiceInstance().getPostedEvent("trypost123@columbia.edu");
-        
+
     }
 
     @FXML
     private void pressJoin(ActionEvent actionEvent) {
+
+        // Ideally:
+        // select from one of the events listed there after we pressed Search button
+        // then press Join, we should getText() for that selected event Id
+
+        // Then we call join method, if return True, we direct back to loginSuccess page, if return False, we have prompt out window
+
+        // String eventId = eventId.getText();
+        // boolean bool = ServiceFactory.getIEventServiceInstance().join(userId, eventId);
+        // if bool == true: get back to login successfully
     }
 }
