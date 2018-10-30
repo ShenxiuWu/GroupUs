@@ -14,14 +14,14 @@ node{
         mvnHome = tool 'maven 3.5.4'
         
         stage('checkout') {
-            git branch: 'shenxiu', credentialsId: 'd383a1cc-5b34-4b81-a95e-d4d6223354bb', url: 'https://github.com/sw3196/GroupUs.git'
+            git credentialsId: 'd383a1cc-5b34-4b81-a95e-d4d6223354bb', url: 'https://github.com/sw3196/GroupUs.git'
         }
 
         stage('compling, test, packaging'){
             sh "'${mvnHome}/bin/mvn' clean verify"
         }
     stage('archival'){
-        publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'Code Coverage', reportTitles: ''])
+        publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'Master Code Coverage', reportTitles: ''])
 
         step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/TEST-*.xml'])
 
