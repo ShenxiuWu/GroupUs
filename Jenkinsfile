@@ -14,7 +14,7 @@ node{
     mvnHome = tool 'maven 3.5.4'
 
     stage('compling, test, packaging'){
-        sh "'${mvnHome}/bin/mvn' clean verify"
+        sh "mvn clean verify"
     }
     stage('archival'){
         publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'Code Coverage', reportTitles: ''])
