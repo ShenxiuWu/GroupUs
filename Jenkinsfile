@@ -9,15 +9,15 @@ import java.net.URL
 
 
 node{
-    tools {
-    maven 'M3'
-    }
+    def mvnHome
+    mvnHome = tool 'maven 3.5.4'
+    
     try{
     def mvnHome
     mvnHome = tool 'maven 3.5.4'
 
     stage('compling, test, packaging'){
-        sh "mvn clean verify"
+        sh "'${mvnHome}/bin/mvn' clean verify"
     }
     stage('archival'){
         publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'Code Coverage', reportTitles: ''])
