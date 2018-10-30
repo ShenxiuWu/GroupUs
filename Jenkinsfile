@@ -20,19 +20,19 @@ node{
         stage('compling, test, packaging'){
             sh "'${mvnHome}/bin/mvn' clean verify"
         }
-    stage('archival'){
-        publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'Code Coverage', reportTitles: ''])
 
-        step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/TEST-*.xml'])
+        stage('archival'){
+            publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'index.html', reportName: 'Code Coverage', reportTitles: ''])
 
-        archiveArtifacts 'target/*.?ar'
-    }
-    stage('return status, publish report'){
-        setBuildStatus("SUCCESS", 'Build '+currentBuild.displayName+' succeeded in '+currentBuild.durationString)
-        dropbox configName: 'CI Report Location', remoteDirectory: 'build-${BUILD_NUMBER}', removePrefix: 'target/site/jacoco', sourceFiles: 'target/site/jacoco/'
-    }
-    }
-    catch(Exception ex){
+            step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/TEST-*.xml'])
+
+            archiveArtifacts 'target/*.?ar'
+        }
+        stage('return status, publish report'){
+            setBuildStatus("SUCCESS", 'Build '+currentBuild.displayName+' succeeded in '+currentBuild.durationString)
+            dropbox configName: 'CI Report Location', remoteDirectory: 'build-${BUILD_NUMBER}', removePrefix: 'target/site/jacoco', sourceFiles: 'target/site/jacoco/'
+        }
+    }catch(Exception ex){
         script {
             properties([[$class: 'GithubProjectProperty',
             projectUrlStr: 'https://github.com/sw3196/GroupUs']])
@@ -55,9 +55,9 @@ node{
 
 def notify(status){
     emailext (
-      to: "wushenxiu@gmail.com",
-      subject: "${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-      body: """<p>${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+        to: "wushenxiu@gmail.com",
+        subject: "${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+        body: """<p>${status}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
         <p>Check console output at <a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a></p>""",
     )
 }
@@ -72,7 +72,7 @@ def setBuildStatus(state, message){
             $class: 'ConditionalStatusResultSource',
             results: [[$class: "AnyBuildResult", state: state, message: message]]
             ]
-        ])
+    ])
 }
 
 def getRepoURL() {
