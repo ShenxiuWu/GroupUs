@@ -9,6 +9,9 @@ import java.net.URL
 
 
 node{
+    tools {
+    maven 'M3'
+    }
     try{
     def mvnHome
     mvnHome = tool 'maven 3.5.4'
