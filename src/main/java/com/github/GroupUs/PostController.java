@@ -82,6 +82,13 @@ public class PostController implements Initializable {
             showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in time!");
             return ;
         }
+        String location = locText.getText();
+        String[] locationCheck = {location};
+        boolean bool = distance.distanceCheck(locationCheck);
+        if (!bool) {
+            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "Invalid Location!");
+            return ;
+        }
 
         Date startTime = Date.from(startDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
         Date endTime = Date.from(endDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());

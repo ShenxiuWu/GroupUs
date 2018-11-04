@@ -2,6 +2,7 @@ package com.github.GroupUs;
 
 import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.vo.EventInfo;
+import com.github.GroupUs.distance;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -72,6 +73,12 @@ public class JoinController {
         System.out.println(selectedRadioButton.getText());
         String category = selectedRadioButton.getText();
         String location = locationText.getText();
+        String[] locationCheck = {location};
+        boolean bool = distance.distanceCheck(locationCheck);
+        if (!bool){
+            showAlert(Alert.AlertType.ERROR, eventTable.getScene().getWindow(), "Form Error!", "Invalid Location!");
+            return ;
+        }
         List<EventInfo> searchedEvent = ServiceFactory.getIEventServiceInstance().searchByCategory(category, location);
 
         //List<EventInfo> searchedEvent = ServiceFactory.getIUserServiceInstance().getPostedEvent("trypost123@columbia.edu");
@@ -109,18 +116,11 @@ public class JoinController {
         boolean bool = ServiceFactory.getIEventServiceInstance().join(userId, idSelected);
         if (!bool){
             showAlert(Alert.AlertType.ERROR, eventTable.getScene().getWindow(), "Form Error!", "Join Failed!");
-        }else{
-            showAlert(Alert.AlertType.ERROR, eventTable.getScene().getWindow(), "Congrats!", "Join Successfully!");
+            return ;
         }
-        // Ideally:
-        // select from one of the events listed there after we pressed Search button
-        // then press Join, we should getText() for that selected event Id
-
-        // Then we call join method, if return True, we direct back to loginSuccess page, if return False, we have prompt out window
-
-        // String eventId = eventId.getText();
-        // boolean bool = ServiceFactory.getIEventServiceInstance().join(userId, eventId);
-        // if bool == true: get back to login successfully
+        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/profile.fxml"));
+        Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        formerStage.setScene(new Scene(newRoot, 600, 400));
     }
 
     private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {

@@ -46,7 +46,7 @@ public class LoginController {
             showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Account Info/Password Wrong");
             return ;
         }
-        showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign in Successfully");
+        // showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign in Successfully");
         userId = logemail.getText();
         // user id get value
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
@@ -76,12 +76,12 @@ public class LoginController {
         vo.setEmail(logemail.getText());
         vo.setPassword(loginpw.getText());
         ServiceFactory.getIUserServiceInstance().insert(vo);
-        showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign up Successfully");
+        // showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign up Successfully");
         // user id get value
+        userId = logemail.getText();
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
         Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         formerStage.setScene(new Scene(newRoot, 600, 400));
-
     }
     private boolean checkEmpty1() throws Exception{
         if(logemail.getText().isEmpty()) {
