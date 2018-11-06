@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
@@ -80,8 +81,14 @@ public class PostController implements Initializable {
         System.out.println(locText.getText());
         System.out.println(memoText.getText());
         System.out.println(descriptionText.getText()); */
+        System.out.println(startDate.getValue().getClass().getSimpleName());
+        System.out.println(endDate.getValue().getClass().getSimpleName());
         System.out.println(startTime.getValue().getClass().getSimpleName());
         System.out.println(endTime.getValue().getClass().getSimpleName());
+        LocalDateTime start = LocalDateTime.of(startDate.getValue(), startTime.getValue());
+        LocalDateTime end = LocalDateTime.of(endDate.getValue(), endTime.getValue());
+        System.out.println(start);
+        System.out.println(end);
 
         if (subjectText.getText().isEmpty()){
             showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in subject!");
@@ -99,8 +106,10 @@ public class PostController implements Initializable {
             return ;
         }
 
-        Date startTime = Date.from(startDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
-        Date endTime = Date.from(endDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date startTime = Date.from(start.atZone(ZoneId.systemDefault()).toInstant());
+        Date endTime = Date.from(end.atZone(ZoneId.systemDefault()).toInstant());
+
+        System.out.println("startTime" + startTime);
 
         Calendar calendar = Calendar.getInstance();
         //Date time = calendar.getTime();

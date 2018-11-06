@@ -56,6 +56,7 @@ public class JoinController {
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
         Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         formerStage.setScene(new Scene(newRoot, 600, 400));
+
         // user id set to initial ?
     }
     //type.getSelectedToggle().getUserData().toString()
