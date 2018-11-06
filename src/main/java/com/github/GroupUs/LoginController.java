@@ -66,11 +66,11 @@ public class LoginController {
             return;
         }
         String pattern1 = ".*@columbia.edu";
-        String pattern2 = ".*@gmail.com";
+        // String pattern2 = ".*@gmail.com";
         boolean isMatch1 = Pattern.matches(pattern1, logemail.getText());
-        boolean isMatch2 = Pattern.matches(pattern2, logemail.getText());
-        if (!isMatch1 && !isMatch2){
-            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Use columbia/gmail email address");
+        // boolean isMatch2 = Pattern.matches(pattern2, logemail.getText());
+        if (!isMatch1){
+            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please use columbia email address");
             return;
         }
         vo.setEmail(logemail.getText());
