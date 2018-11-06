@@ -37,6 +37,10 @@ public class EventServiceImpl implements IEventService {
                     userPosted.add(eventId);
                     user.setPosted(userPosted);
                     ServiceFactory.getIUserServiceInstance().update(user);
+                    List<String> userJoined = user.getJoined();
+                    userJoined.add(eventId);
+                    user.setJoined(userJoined);
+                    ServiceFactory.getIUserServiceInstance().update(user);
                 }
                 return DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).doCreate(vo);
             }
@@ -68,8 +72,6 @@ public class EventServiceImpl implements IEventService {
             if (userJoined.contains(eventId)) {
                 System.out.println("event already exist, failed to join");
                 return false;
-            } else {
-                System.out.println("join success");
             }
             userJoined.add(eventId);
             user.setJoined(userJoined);
@@ -87,12 +89,15 @@ public class EventServiceImpl implements IEventService {
             List<EventInfo> events = DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByCategory(category, currentLocation);
             if (events != null) {
                 Calendar calendar = Calendar.getInstance();
-                Date time = calendar.getTime();
+                //Date time = calendar.getTime();
+                calendar.set(Calendar.SECOND, 0);
+                calendar.set(Calendar.MILLISECOND, 0);
                 long timeInMillis = calendar.getTimeInMillis();
                 for (int i = 0; i < events.size(); i ++) {
-                    if (events.get(i).getEnd().getTime() > timeInMillis) {
+                    if (events.get(i).getEnd().getTime() < timeInMillis) {
                         events.remove(i);
-                    }                }
+                    }
+                }
                 Collections.sort(events, new EventInfo.SortByDistance());
                 return events;
             } else {

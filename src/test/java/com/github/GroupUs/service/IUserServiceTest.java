@@ -65,7 +65,7 @@ public class IUserServiceTest {
         List<String> p = new ArrayList<String>();
         p.add("zz");
         p.add("xx");
-        vo.setEmail("rg3105@gmail.com");
+        vo.setEmail("hello123@gmail.com");
         vo.setPassword("123456");
         vo.setPosted(j);
         vo.setJoined(p);

@@ -45,6 +45,7 @@ public class distance {
             //System.out.println(gson.toJson(result));
             res = gson.toJson(result);
             JsonObject obj = gson.fromJson(res, JsonObject.class);
+            System.out.println("test" + obj);
             //JSONParser parser = new JSONParser();
             //JSONObject obj = (JSONObject) parser.parse(res);
             //JSONObject obj = new JSONObject(result);
@@ -59,5 +60,38 @@ public class distance {
             e.printStackTrace();
         }
         return meters;
+    }
+
+    public static boolean distanceCheck(String [] origins) {
+        GeoApiContext context = new GeoApiContext.Builder()
+                .apiKey("AIzaSyBB2Mz7wexVz5mlpom9NqQc--6bf5tPbfo")
+                .build();
+        String res = "";
+        Integer meters = 0;
+        try {
+            DistanceMatrix result = DistanceMatrixApi.newRequest(context)
+                    .origins(origins)
+                    .destinations("Columbia University")
+                    .mode(TravelMode.TRANSIT)
+                    .language("fr-FR")
+                    .await();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            //System.out.println(gson.toJson(result));
+            res = gson.toJson(result);
+            JsonObject obj = gson.fromJson(res, JsonObject.class);
+            //JSONParser parser = new JSONParser();
+            //JSONObject obj = (JSONObject) parser.parse(res);
+            //JSONObject obj = new JSONObject(result);
+            JsonArray arr = obj.getAsJsonArray("rows");
+            JsonArray arr1 = arr.get(0).getAsJsonObject().getAsJsonArray("elements");
+            String str = gson.toJson(arr1.get(0).getAsJsonObject().get("status"));
+            String toCompare = "\"NOT_FOUND\"";
+            if (toCompare.equals(str)) {
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return true;
     }
 }

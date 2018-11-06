@@ -33,6 +33,8 @@ public class ProfileController {
     private TableView<EventInfo> joinTable;
     @FXML
     private Label outputarea;
+    @FXML
+    private Label nameTag;
 
     //
     // given a user id !
@@ -66,7 +68,8 @@ public class ProfileController {
         joinTable.setPlaceholder(new Label("No content"));
         joinTable.setItems(joinitem);
         joinTable.getColumns().addAll(categoryColumn2,subjectColumn2,locationColumn2);
-
+        String userName = ServiceFactory.getIUserServiceInstance().get(userId).getName();
+        nameTag.setText("Welcome  "+ userName + " !" + "\n" + "Your user ID is:  " + userId);
     }
 
 

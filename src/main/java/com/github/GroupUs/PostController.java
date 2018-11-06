@@ -2,6 +2,7 @@ package com.github.GroupUs;
 
 import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.vo.EventInfo;
+import com.jfoenix.controls.JFXTimePicker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +15,9 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -39,6 +42,10 @@ public class PostController implements Initializable {
     private TextArea descriptionText;
     @FXML
     private Button postButton;
+    @FXML
+    private JFXTimePicker startTime;
+    @FXML
+    private JFXTimePicker endTime;
 
     public void initialize(URL location, ResourceBundle resources) {
         //choiceBOX.getItems().removeAll(choiceBOX.getItems());
@@ -67,13 +74,22 @@ public class PostController implements Initializable {
 // locText.getText() memoText.getText() descriptionText.getText()
     @FXML
     private void pressPost(ActionEvent actionEvent) throws Exception{
-        System.out.println(choiceBOX.getValue());
+       /* System.out.println(choiceBOX.getValue());
         System.out.println(subjectText.getText());
         System.out.println(startDate.getValue());
         System.out.println(endDate.getValue());
         System.out.println(locText.getText());
         System.out.println(memoText.getText());
-        System.out.println(descriptionText.getText());
+        System.out.println(descriptionText.getText()); */
+        System.out.println(startDate.getValue().getClass().getSimpleName());
+        System.out.println(endDate.getValue().getClass().getSimpleName());
+        System.out.println(startTime.getValue().getClass().getSimpleName());
+        System.out.println(endTime.getValue().getClass().getSimpleName());
+        LocalDateTime start = LocalDateTime.of(startDate.getValue(), startTime.getValue());
+        LocalDateTime end = LocalDateTime.of(endDate.getValue(), endTime.getValue());
+        System.out.println(start);
+        System.out.println(end);
+
         if (subjectText.getText().isEmpty()){
             showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in subject!");
             return ;
@@ -82,9 +98,30 @@ public class PostController implements Initializable {
             showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in time!");
             return ;
         }
+        String location = locText.getText();
+        String[] locationCheck = {location};
+        boolean bool = distance.distanceCheck(locationCheck);
+        if (!bool) {
+            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "Invalid Location!");
+            return ;
+        }
 
-        Date startTime = Date.from(startDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
-        Date endTime = Date.from(endDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date startTime = Date.from(start.atZone(ZoneId.systemDefault()).toInstant());
+        Date endTime = Date.from(end.atZone(ZoneId.systemDefault()).toInstant());
+
+        System.out.println("startTime" + startTime);
+
+        Calendar calendar = Calendar.getInstance();
+        //Date time = calendar.getTime();
+        long timeInMillis = calendar.getTimeInMillis();
+        if (startTime.getTime() < timeInMillis) {
+            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "Start time is earlier than current time!");
+            return ;
+        }
+        if (startTime.getTime() > endTime.getTime()) {
+            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "Start time is later than end time!");
+            return ;
+        }
 
         // Insert event into database
         // userId = "trypost123@columbia.edu"; // only for now
@@ -97,7 +134,7 @@ public class PostController implements Initializable {
         vo.setMemo(memoText.getText());
         vo.setDescription(descriptionText.getText());
         ServiceFactory.getIEventServiceInstance().insert(vo);
-        showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Congrats!", "You post successfully!");
+        // showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Congrats!", "You post successfully!");
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
         Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         formerStage.setScene(new Scene(newRoot, 600, 400));
