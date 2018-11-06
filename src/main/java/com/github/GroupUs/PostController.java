@@ -81,23 +81,27 @@ public class PostController implements Initializable {
         System.out.println(locText.getText());
         System.out.println(memoText.getText());
         System.out.println(descriptionText.getText()); */
-        System.out.println(startDate.getValue().getClass().getSimpleName());
-        System.out.println(endDate.getValue().getClass().getSimpleName());
-        System.out.println(startTime.getValue().getClass().getSimpleName());
-        System.out.println(endTime.getValue().getClass().getSimpleName());
-        LocalDateTime start = LocalDateTime.of(startDate.getValue(), startTime.getValue());
-        LocalDateTime end = LocalDateTime.of(endDate.getValue(), endTime.getValue());
-        System.out.println(start);
-        System.out.println(end);
+//        System.out.println(startDate.getValue().getClass().getSimpleName());
+//        System.out.println(endDate.getValue().getClass().getSimpleName());
+//        System.out.println(startTime.getValue().getClass().getSimpleName());
+//        System.out.println(endTime.getValue().getClass().getSimpleName());
+//
+//        System.out.println(start);
+//        System.out.println(end);
+
+
 
         if (subjectText.getText().isEmpty()){
+            System.out.println("first");
             showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in subject!");
             return ;
         }
-        if (startDate.getValue() == null || endDate.getValue() == null){
-            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in time!");
+
+        if (locText.getText().isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should enter location!");
             return ;
         }
+
         String location = locText.getText();
         String[] locationCheck = {location};
         boolean bool = distance.distanceCheck(locationCheck);
@@ -106,6 +110,13 @@ public class PostController implements Initializable {
             return ;
         }
 
+        if (startDate.getValue() == null || endDate.getValue() == null || startTime.getValue() == null || endTime.getValue() == null) {
+            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in time!");
+            return ;
+        }
+
+        LocalDateTime start = LocalDateTime.of(startDate.getValue(), startTime.getValue());
+        LocalDateTime end = LocalDateTime.of(endDate.getValue(), endTime.getValue());
         Date startTime = Date.from(start.atZone(ZoneId.systemDefault()).toInstant());
         Date endTime = Date.from(end.atZone(ZoneId.systemDefault()).toInstant());
 
