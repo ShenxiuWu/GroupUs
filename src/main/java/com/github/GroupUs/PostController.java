@@ -15,6 +15,7 @@ import javafx.stage.Window;
 
 import java.net.URL;
 import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -93,6 +94,18 @@ public class PostController implements Initializable {
         Date startTime = Date.from(startDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
         Date endTime = Date.from(endDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
 
+        Calendar calendar = Calendar.getInstance();
+        //Date time = calendar.getTime();
+        long timeInMillis = calendar.getTimeInMillis();
+        if (startTime.getTime() < timeInMillis) {
+            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "Start time is earlier than current time!");
+            return ;
+        }
+        if (startTime.getTime() > endTime.getTime()) {
+            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "Start time is later than end time!");
+            return ;
+        }
+
         // Insert event into database
         // userId = "trypost123@columbia.edu"; // only for now
         vo.setCreator(userId);
@@ -104,7 +117,7 @@ public class PostController implements Initializable {
         vo.setMemo(memoText.getText());
         vo.setDescription(descriptionText.getText());
         ServiceFactory.getIEventServiceInstance().insert(vo);
-        showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Congrats!", "You post successfully!");
+        // showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Congrats!", "You post successfully!");
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
         Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         formerStage.setScene(new Scene(newRoot, 600, 400));

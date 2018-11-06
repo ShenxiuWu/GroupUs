@@ -80,7 +80,9 @@ public class JoinController {
             return ;
         }
         List<EventInfo> searchedEvent = ServiceFactory.getIEventServiceInstance().searchByCategory(category, location);
-
+        for (int i = 0; i < searchedEvent.size(); i ++) {
+            System.out.println(searchedEvent.get(i).getEventId());
+        }
         //List<EventInfo> searchedEvent = ServiceFactory.getIUserServiceInstance().getPostedEvent("trypost123@columbia.edu");
         ObservableList<EventInfo> searcheditem = FXCollections.observableList(searchedEvent);
 
@@ -115,7 +117,7 @@ public class JoinController {
         String idSelected = itemSelected.getEventId();
         boolean bool = ServiceFactory.getIEventServiceInstance().join(userId, idSelected);
         if (!bool){
-            showAlert(Alert.AlertType.ERROR, eventTable.getScene().getWindow(), "Form Error!", "Join Failed!");
+            showAlert(Alert.AlertType.ERROR, eventTable.getScene().getWindow(), "Form Error!", "You have joined the event already!");
             return ;
         }
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/profile.fxml"));
