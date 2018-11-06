@@ -2,6 +2,7 @@ package com.github.GroupUs;
 
 import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.vo.EventInfo;
+import com.jfoenix.controls.JFXTimePicker;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,6 +41,10 @@ public class PostController implements Initializable {
     private TextArea descriptionText;
     @FXML
     private Button postButton;
+    @FXML
+    private JFXTimePicker startTime;
+    @FXML
+    private JFXTimePicker endTime;
 
     public void initialize(URL location, ResourceBundle resources) {
         //choiceBOX.getItems().removeAll(choiceBOX.getItems());
@@ -68,13 +73,16 @@ public class PostController implements Initializable {
 // locText.getText() memoText.getText() descriptionText.getText()
     @FXML
     private void pressPost(ActionEvent actionEvent) throws Exception{
-        System.out.println(choiceBOX.getValue());
+       /* System.out.println(choiceBOX.getValue());
         System.out.println(subjectText.getText());
         System.out.println(startDate.getValue());
         System.out.println(endDate.getValue());
         System.out.println(locText.getText());
         System.out.println(memoText.getText());
-        System.out.println(descriptionText.getText());
+        System.out.println(descriptionText.getText()); */
+        System.out.println(startTime.getValue().getClass().getSimpleName());
+        System.out.println(endTime.getValue().getClass().getSimpleName());
+
         if (subjectText.getText().isEmpty()){
             showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in subject!");
             return ;
