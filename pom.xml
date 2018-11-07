@@ -89,7 +89,7 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>pmd</goal>
+                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
