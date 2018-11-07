@@ -32,16 +32,16 @@ node{
             setBuildStatus("SUCCESS", 'Build '+currentBuild.displayName+' succeeded in '+currentBuild.durationString)
         }
         stage ('PMD analysis') {
-                //step([$class: 'PmdPublisher', failedTotalHigh: '999', failedTotalLow: '999', failedTotalNormal: '999', healthy: '0', pattern: 'build/pmd-results.xml', unHealthy: '999', unstableTotalHigh: '999', unstableTotalLow: '999', unstableTotalNormal: '999'])
+                // step([$class: 'PmdPublisher', failedTotalHigh: '999', failedTotalLow: '999', failedTotalNormal: '999', healthy: '0', pattern: 'build/pmd-results.xml', unHealthy: '999', unstableTotalHigh: '999', unstableTotalLow: '999', unstableTotalNormal: '999'])
                 try{
 
                 sh "'${mvnHome}/bin/mvn' -batch-mode -V -U -e pmd:pmd"
-                def pmd = scanForIssues tool: [$class: 'Pmd'], pattern: '**/target/pmd.xml'
-                publishIssues issues:[pmd]
+                // def pmd = scanForIssues tool: [$class: 'Pmd'], pattern: '**/target/pmd.xml'
+                // publishIssues issues:[pmd]
 
-                publishIssues id:'analysis', name:'White Mountains Issues',
-                    issues:[pmd],
-                    filters:[includePackage('io.jenkins.plugins.analysis.*')]
+                // publishIssues id:'analysis', name:'White Mountains Issues',
+                //    issues:[pmd],
+                //    filters:[includePackage('io.jenkins.plugins.analysis.*')]
                 }catch(Exception ex){
                     pass
                 }
