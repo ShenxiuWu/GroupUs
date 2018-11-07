@@ -145,17 +145,17 @@
 
     <reporting>
         <plugins>
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-pmd-plugin</artifactId>-->
-                <!--<version>3.11.0</version>-->
-                <!--<configuration>-->
-                    <!--<linkXRef>false</linkXRef>-->
-                    <!--<failurePriority>5</failurePriority>-->
-                    <!--<failOnViolation>false</failOnViolation>-->
-                    <!--<targetDirectory>./pmdOutput</targetDirectory>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <linkXRef>false</linkXRef>
+                    <failurePriority>4</failurePriority>
+                    <failOnViolation>false</failOnViolation>
+                    <targetDirectory>./pmdOutput</targetDirectory>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
