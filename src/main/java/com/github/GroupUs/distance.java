@@ -86,7 +86,8 @@ public class distance {
             JsonArray arr1 = arr.get(0).getAsJsonObject().getAsJsonArray("elements");
             String str = gson.toJson(arr1.get(0).getAsJsonObject().get("status"));
             String toCompare = "\"NOT_FOUND\"";
-            if (toCompare.equals(str)) {
+            String toCompare2 = "\"ZERO_RESULTS\"";
+            if (toCompare.equals(str) || toCompare2.equals(str)) {
                 return false;
             }
         } catch (Exception e) {

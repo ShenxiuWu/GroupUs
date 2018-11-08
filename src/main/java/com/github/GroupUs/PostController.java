@@ -105,6 +105,7 @@ public class PostController implements Initializable {
         String location = locText.getText();
         String[] locationCheck = {location};
         boolean bool = distance.distanceCheck(locationCheck);
+        System.out.println("bool" + bool);
         if (!bool) {
             showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "Invalid Location!");
             return ;
