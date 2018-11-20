@@ -16,6 +16,9 @@ public class UserServiceImpl implements IUserService {
     @Override
     public boolean insert(UserInfo vo) throws Exception {
         try {
+            // TODO: check username(email), password, name
+
+
             if (DAOFactory.getIUserDAOInstance(this.dbc.getConnection()).findByEmail(vo.getEmail()) == null) {
                 return DAOFactory.getIUserDAOInstance(this.dbc.getConnection()).doCreate(vo);
             }
@@ -40,6 +43,8 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public UserInfo get(String email) throws Exception {
+        // TODO: check username(email), password, name
+
         try {
             return DAOFactory.getIUserDAOInstance(this.dbc.getConnection()).findByEmail(email);
         } catch (Exception e) {
