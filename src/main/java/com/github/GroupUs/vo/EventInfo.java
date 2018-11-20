@@ -1,14 +1,10 @@
 package com.github.GroupUs.vo;
 
-import com.github.GroupUs.distance;
+import com.github.GroupUs.impl.distance;
 
 import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Date;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 
 //{

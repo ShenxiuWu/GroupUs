@@ -1,6 +1,7 @@
 package com.github.GroupUs;
 
 import com.github.GroupUs.factory.ServiceFactory;
+import com.github.GroupUs.impl.distance;
 import com.github.GroupUs.vo.EventInfo;
 import com.jfoenix.controls.JFXTimePicker;
 import javafx.event.ActionEvent;

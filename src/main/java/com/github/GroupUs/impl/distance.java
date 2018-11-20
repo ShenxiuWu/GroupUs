@@ -1,4 +1,4 @@
-package com.github.GroupUs;
+package com.github.GroupUs.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

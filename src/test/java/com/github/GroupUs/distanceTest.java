@@ -1,5 +1,6 @@
 package com.github.GroupUs;
 
+import com.github.GroupUs.impl.distance;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
