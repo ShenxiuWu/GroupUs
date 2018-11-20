@@ -22,6 +22,7 @@ public class DatabaseConnectionTest {
         this.client = null;
         try {
             dbc.close();
+            TestCase.assertNull(this.client);
         } catch (Exception e) {
             e.printStackTrace();
         }
