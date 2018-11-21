@@ -1,4 +1,4 @@
-package com.github.GroupUs;
+package com.github.GroupUs.impl;
 
 import com.github.GroupUs.impl.distance;
 import org.junit.Test;

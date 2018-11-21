@@ -24,10 +24,6 @@ import static java.lang.Integer.parseInt;
  *
  */
 public class distance {
-    public static void main(String[] args) {
-        distanceMatirx(new String[] {"Stanford University"}, new String[] {"Columbia University"});
-    }
-
     public static Integer distanceMatirx(String [] origins, String [] destinations) {
         GeoApiContext context = new GeoApiContext.Builder()
                 .apiKey("AIzaSyBB2Mz7wexVz5mlpom9NqQc--6bf5tPbfo")

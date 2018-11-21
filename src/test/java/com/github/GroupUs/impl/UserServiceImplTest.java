@@ -1,4 +1,4 @@
-package com.github.GroupUs.service;
+package com.github.GroupUs.impl;
 
 import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.vo.EventInfo;
@@ -9,13 +9,15 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.github.GroupUs.Main.databaseUrl;
 import static com.github.GroupUs.Main.userId;
 import static org.junit.Assert.*;
 
-public class IUserServiceTest {
+public class UserServiceImplTest {
 
     @Test
     public void insert() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
         UserInfo vo = new UserInfo();
         List<String> j = new ArrayList<String>();
         j.add("xx");
