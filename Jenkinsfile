@@ -28,9 +28,23 @@ node{
 
             archiveArtifacts 'target/*.?ar'
         }
-        stage('return status, publish report'){
+        stage('return status'){
             setBuildStatus("SUCCESS", 'Build '+currentBuild.displayName+' succeeded in '+currentBuild.durationString)
-            dropbox configName: 'CI Report Location', remoteDirectory: 'build-${BUILD_NUMBER}', removePrefix: 'target/site/jacoco', sourceFiles: 'target/site/jacoco/'
+        }
+        stage ('PMD analysis') {
+                // step([$class: 'PmdPublisher', failedTotalHigh: '999', failedTotalLow: '999', failedTotalNormal: '999', healthy: '0', pattern: 'build/pmd-results.xml', unHealthy: '999', unstableTotalHigh: '999', unstableTotalLow: '999', unstableTotalNormal: '999'])
+                try{
+
+                sh "'${mvnHome}/bin/mvn' -batch-mode -V -U -e pmd:pmd"
+                // def pmd = scanForIssues tool: [$class: 'Pmd'], pattern: '**/target/pmd.xml'
+                // publishIssues issues:[pmd]
+
+                // publishIssues id:'analysis', name:'White Mountains Issues',
+                //    issues:[pmd],
+                //    filters:[includePackage('io.jenkins.plugins.analysis.*')]
+                }catch(Exception ex){
+                    pass
+                }
         }
     }catch(Exception ex){
         script {
@@ -45,7 +59,8 @@ node{
 
         setBuildStatus("FAILURE", "some error happened")
     }finally{
-        stage('send email'){
+        stage('send email & publish report'){
+            dropbox configName: 'CI Report Location', remoteDirectory: 'build-${BUILD_NUMBER}', removePrefix: 'target/site', sourceFiles: 'target/site/'
             notify('finished')
         }
     }

@@ -73,6 +73,7 @@ public class LoginController {
             showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please use columbia email address");
             return;
         }
+        vo.setName(logname.getText());
         vo.setEmail(logemail.getText());
         vo.setPassword(loginpw.getText());
         ServiceFactory.getIUserServiceInstance().insert(vo);

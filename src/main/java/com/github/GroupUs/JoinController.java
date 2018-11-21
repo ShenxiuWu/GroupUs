@@ -2,7 +2,7 @@ package com.github.GroupUs;
 
 import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.vo.EventInfo;
-import com.github.GroupUs.distance;
+import com.github.GroupUs.impl.distance;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,7 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.util.List;
-import com.github.GroupUs.vo.EventInfo;
+
 import javafx.stage.Window;
 
 import static com.github.GroupUs.Main.userId;

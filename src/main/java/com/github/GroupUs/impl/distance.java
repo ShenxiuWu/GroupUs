@@ -1,4 +1,4 @@
-package com.github.GroupUs;
+package com.github.GroupUs.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -69,6 +69,12 @@ public class distance {
         String res = "";
         Integer meters = 0;
         try {
+            if (origins[0].length() > 100) {
+                return false;
+            }
+            if (!origins[0].matches("[a-zA-Z0-9]*")) {
+                return false;
+            }
             DistanceMatrix result = DistanceMatrixApi.newRequest(context)
                     .origins(origins)
                     .destinations("Columbia University")
@@ -82,7 +88,8 @@ public class distance {
             JsonArray arr1 = arr.get(0).getAsJsonObject().getAsJsonArray("elements");
             String str = gson.toJson(arr1.get(0).getAsJsonObject().get("status"));
             String toCompare = "\"NOT_FOUND\"";
-            if (toCompare.equals(str)) {
+            String toCompare2 = "\"ZERO_RESULTS\"";
+            if (toCompare.equals(str) || toCompare2.equals(str)) {
                 return false;
             }
         } catch (Exception e) {
