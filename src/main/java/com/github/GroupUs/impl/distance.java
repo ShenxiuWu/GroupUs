@@ -69,10 +69,10 @@ public class distance {
         String res = "";
         Integer meters = 0;
         try {
-            if (origins[0].length() > 100) {
+            if (origins[0].length() > 50) {
                 return false;
             }
-            if (!origins[0].matches("[a-zA-Z0-9]*")) {
+            if (!origins[0].matches("^[a-zA-Z0-9\\s]+$")) {
                 return false;
             }
             DistanceMatrix result = DistanceMatrixApi.newRequest(context)
