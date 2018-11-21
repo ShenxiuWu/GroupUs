@@ -1,4 +1,4 @@
-package com.github.GroupUs.service;
+package com.github.GroupUs.impl;
 
 import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.vo.EventInfo;
@@ -15,7 +15,7 @@ import static com.github.GroupUs.Main.userId;
 import static com.github.GroupUs.Main.databaseUrl;
 import static org.junit.Assert.*;
 
-public class IEventServiceTest {
+public class EventServiceImplTest {
     EventInfo vo = new EventInfo();
 
 

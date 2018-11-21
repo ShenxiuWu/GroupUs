@@ -1,4 +1,4 @@
-package com.github.GroupUs.service;
+package com.github.GroupUs.impl;
 
 import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.vo.EventInfo;
@@ -13,7 +13,7 @@ import static com.github.GroupUs.Main.databaseUrl;
 import static com.github.GroupUs.Main.userId;
 import static org.junit.Assert.*;
 
-public class IUserServiceTest {
+public class UserServiceImplTest {
 
     @Test
     public void insert() {
