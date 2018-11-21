@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed5e2ba9-d931-4e91-81d6-5859db769c1d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/GroupUs/dbc/DatabaseConnectionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/JoinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/JoinController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/distance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/distance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/vo/EventInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/vo/EventInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/GroupUs/distanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/GroupUs/distanceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/GroupUs/JoinController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/GroupUs/JoinController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/GroupUs/distance.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -118,13 +103,23 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="355337732">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1480">
+            <state relative-caret-position="1110">
               <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -136,7 +131,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="270">
               <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
             </state>
           </provider>
@@ -145,7 +140,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/service/IUserServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
+            <state relative-caret-position="855">
               <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
             </state>
           </provider>
@@ -154,7 +149,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/EventServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1400">
+            <state relative-caret-position="1050">
               <caret line="70" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -166,7 +161,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/JoinController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1160">
+            <state relative-caret-position="870">
               <caret line="58" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -178,7 +173,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/service/IEventServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
+            <state relative-caret-position="495">
               <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
             </state>
           </provider>
@@ -187,7 +182,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/ProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="820">
+            <state relative-caret-position="615">
               <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -199,7 +194,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/distanceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="120">
               <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
             </state>
           </provider>
@@ -208,8 +203,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/distance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="79" column="17" lean-forward="true" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
+            <state relative-caret-position="415">
+              <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -217,7 +212,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/PostController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2260">
+            <state relative-caret-position="1695">
               <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
             </state>
           </provider>
@@ -272,8 +267,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="290" />
+    <option name="y" value="46" />
     <option name="width" value="1440" />
     <option name="height" value="797" />
   </component>
@@ -283,6 +279,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -345,13 +342,13 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542761571753" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -477,8 +474,7 @@
     <option name="totallyTimeSpent" value="21269000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -508,6 +504,7 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Mongo Explorer" order="9" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
@@ -576,9 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1695">
           <caret line="161" column="52" selection-start-line="161" selection-start-column="52" selection-end-line="161" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -595,7 +589,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/distance.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1480">
+        <state relative-caret-position="1110">
           <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -605,21 +599,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="270">
           <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/service/IUserServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
+        <state relative-caret-position="855">
           <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/EventServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
+        <state relative-caret-position="1050">
           <caret line="70" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -629,7 +623,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/JoinController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
+        <state relative-caret-position="870">
           <caret line="58" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -639,14 +633,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/service/IEventServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
+        <state relative-caret-position="495">
           <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/ProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
+        <state relative-caret-position="615">
           <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -654,24 +648,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/PostController.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/distanceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2260">
-          <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
+        <state relative-caret-position="120">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/distanceTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/PostController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+        <state relative-caret-position="1695">
+          <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/distance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="79" column="17" lean-forward="true" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
+        <state relative-caret-position="415">
+          <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
         </state>
       </provider>
     </entry>

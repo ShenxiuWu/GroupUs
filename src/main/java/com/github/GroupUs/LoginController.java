@@ -15,6 +15,7 @@ import javafx.stage.Window;
 import javafx.stage.Stage;
 import java.util.regex.*;
 
+
 import static com.github.GroupUs.Main.userId;
 
 public class LoginController {
@@ -56,7 +57,8 @@ public class LoginController {
     }
 
     @FXML
-    private void signUp(ActionEvent actionEvent) throws Exception {
+    private void signUp(ActionEvent actionEvent) {
+        try {
         boolean empty_check = checkEmpty2();
         if (!empty_check) {
             return;
@@ -76,13 +78,23 @@ public class LoginController {
         vo.setName(logname.getText());
         vo.setEmail(logemail.getText());
         vo.setPassword(loginpw.getText());
-        ServiceFactory.getIUserServiceInstance().insert(vo);
+
+        if (!ServiceFactory.getIUserServiceInstance().insert(vo)){
+            // TODO: alert window
+        }
+
+
         // showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign up Successfully");
         // user id get value
         userId = logemail.getText();
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
         Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
         formerStage.setScene(new Scene(newRoot, 600, 400));
+        }
+        catch (Exception e){
+            // TODO: record log
+
+        }
     }
     private boolean checkEmpty1() throws Exception{
         if(logemail.getText().isEmpty()) {

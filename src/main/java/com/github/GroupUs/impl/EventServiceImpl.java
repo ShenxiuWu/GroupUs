@@ -15,9 +15,36 @@ import static com.github.GroupUs.Main.userId;
 
 public class EventServiceImpl implements IEventService {
     private DatabaseConnection dbc = new DatabaseConnection();
+
+    /**
+     * @param vo
+     *   @feature length
+     *     @ equivalence partition：length smaller than 100 / length larger than 100
+     *       @ boundary condition: length = 99, length = 100, length = 101
+     *   @feature consist of 26 letters or numbers
+     *     @ equivalence partition: string only contains 26 letters or numbers / string contains other special characters
+     *       @ boundary condition: string with $, string with space.
+     *   @feature valid/invalid locations(locations could/couldn't be found in matrixDistance class)
+     *     @ equivalence partition: string enables method distanceCheck return true/false
+     *       @ boundary condition: string = null, string = test...
+     */
     @Override
     public boolean insert(EventInfo vo) throws Exception {
         try {
+            // Test Case: subject
+            String subject = vo.getSubject();
+            // null
+            if (subject == null) {
+                return false;
+            }
+            // length
+            if (subject.length() > 20) {
+                return false;
+            }
+            // character
+            if (!subject.matches("[a-zA-Z0-9]*")) {
+                return false;
+            }
             if (DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByEventId(vo.getEventId()) == null) {
                 String creator = userId;
                 Date createdAt = new Date();
@@ -83,20 +110,9 @@ public class EventServiceImpl implements IEventService {
         }
     }
 
-    /**
-     * @param currentLocation
-     *   @feature length
-     *     @ equivalence partition：length smaller than 100 / length larger than 100
-     *       @ boundary condition: length = 99, length = 100, length = 101
-     *   @feature consist of 26 letters or numbers
-     *     @ equivalence partition: string only contains 26 letters or numbers / string contains other special characters
-     *       @ boundary condition: string with $, string with space.
-     *   @feature valid/invalid locations(locations could/couldn't be found in matrixDistance class)
-     *     @ equivalence partition: string enables method distanceCheck return true/false
-     *       @ boundary condition: string = null, string = test...
-     */
     @Override
     public List<EventInfo> searchByCategory(String category, String currentLocation) throws Exception {
+
         try {
             List<EventInfo> events = DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByCategory(category, currentLocation);
             if (events != null) {
