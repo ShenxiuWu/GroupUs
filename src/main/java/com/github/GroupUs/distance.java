@@ -76,12 +76,8 @@ public class distance {
                     .language("fr-FR")
                     .await();
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            //System.out.println(gson.toJson(result));
             res = gson.toJson(result);
             JsonObject obj = gson.fromJson(res, JsonObject.class);
-            //JSONParser parser = new JSONParser();
-            //JSONObject obj = (JSONObject) parser.parse(res);
-            //JSONObject obj = new JSONObject(result);
             JsonArray arr = obj.getAsJsonArray("rows");
             JsonArray arr1 = arr.get(0).getAsJsonObject().getAsJsonArray("elements");
             String str = gson.toJson(arr1.get(0).getAsJsonObject().get("status"));
