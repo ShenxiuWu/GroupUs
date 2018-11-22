@@ -59,40 +59,39 @@ public class LoginController {
     @FXML
     private void signUp(ActionEvent actionEvent) {
         try {
-        boolean empty_check = checkEmpty2();
-        if (!empty_check) {
-            return;
-        }
-        if (ServiceFactory.getIUserServiceInstance().get(logemail.getText()) != null){
-            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Account Exist! Please Sign in.");
-            return;
-        }
-        String pattern1 = ".*@columbia.edu";
-        // String pattern2 = ".*@gmail.com";
-        boolean isMatch1 = Pattern.matches(pattern1, logemail.getText());
-        // boolean isMatch2 = Pattern.matches(pattern2, logemail.getText());
-        if (!isMatch1){
-            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please use columbia email address");
-            return;
-        }
-        vo.setName(logname.getText());
-        vo.setEmail(logemail.getText());
-        vo.setPassword(loginpw.getText());
 
-        if (!ServiceFactory.getIUserServiceInstance().insert(vo)){
-            // TODO: alert window
-        }
+            boolean empty_check = checkEmpty2();
+            if (!empty_check) {
+                return;
+            }
+            if (ServiceFactory.getIUserServiceInstance().get(logemail.getText()) != null){
+                showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Account Exist! Please Sign in.");
+                return;
+            }
+            String pattern1 = ".*@columbia.edu";
+            // String pattern2 = ".*@gmail.com";
+            boolean isMatch1 = Pattern.matches(pattern1, logemail.getText());
+            // boolean isMatch2 = Pattern.matches(pattern2, logemail.getText());
+            if (!isMatch1){
+                showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", "Please use columbia email address");
+                return;
+            }
+            vo.setName(logname.getText());
+            vo.setEmail(logemail.getText());
+            vo.setPassword(loginpw.getText());
 
-
-        // showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Welcome!", "Sign up Successfully");
-        // user id get value
-        userId = logemail.getText();
-        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
-        Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        formerStage.setScene(new Scene(newRoot, 600, 400));
+            // try to insert the new input message to database
+            ServiceFactory.getIUserServiceInstance().insert(vo);
+            showAlert(Alert.AlertType.INFORMATION, loginpane.getScene().getWindow(), "Welcome!", "Sign up Successfully, click OK button to jump to the profile page");
+            // user id get value
+            userId = logemail.getText();
+            Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
+            Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            formerStage.setScene(new Scene(newRoot, 600, 400));
         }
         catch (Exception e){
             // TODO: record log
+            showAlert(Alert.AlertType.ERROR, loginpane.getScene().getWindow(), "Form Error!", e.getMessage());  // get and return the error message from backend to frontend
 
         }
     }
