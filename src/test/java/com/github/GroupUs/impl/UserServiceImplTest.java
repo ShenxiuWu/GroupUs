@@ -1,5 +1,7 @@
 package com.github.GroupUs.impl;
 
+import com.github.GroupUs.dbc.DatabaseConnection;
+import com.github.GroupUs.factory.DAOFactory;
 import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.vo.EventInfo;
 import com.github.GroupUs.vo.UserInfo;
@@ -16,6 +18,8 @@ import static org.junit.Assert.*;
 
 public class UserServiceImplTest {
 
+
+
     @Test
     public void insert() {
         databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
@@ -26,13 +30,14 @@ public class UserServiceImplTest {
         List<String> p = new ArrayList<String>();
         p.add("zz");
         p.add("xx");
-        vo.setEmail("hello123@gmail.com");
-        vo.setPassword("999");
+        vo.setEmail("rz2391@columbia.edu");
+        vo.setName("abcd999");
+        vo.setPassword("abcd999");
         vo.setPosted(j);
         vo.setJoined(p);
-        vo.setName("Group study");
+        //vo.setName("Group study");
         try {
-            TestCase.assertFalse(ServiceFactory.getIUserServiceInstance().insert(vo));
+            TestCase.assertTrue(ServiceFactory.getIUserServiceInstance().insert(vo));
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -64,6 +69,41 @@ public class UserServiceImplTest {
             assertThat(anJavaLongException.getMessage(), is("The input name should start with character, cannot be null and no more than 20 bytes, with the following special characters _%&',;=?"));
         }
     }
+
+    @Test
+    public void testPasswordExceptionMessage() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        UserInfo vo = new UserInfo();
+        vo.setEmail("rz2390@columbia.edu");
+        vo.setName("testName");
+        vo.setPassword("123abcde");
+        try {
+            ServiceFactory.getIUserServiceInstance().insert(vo);
+            fail("Expected an IndexOutOfBoundsException to be thrown");
+        } catch (Exception anJavaLongException) {
+            assertThat(anJavaLongException.getMessage(), is("The password must start with letters, the length is between 6-18, and can only contain characters, numbers and underlines."));
+        }
+    }
+
+    @Test
+    public void testFindByEmailNullExceptionMessage() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        DatabaseConnection dbc = new DatabaseConnection();
+        UserInfo vo = new UserInfo();
+        vo.setEmail("rz2390@columbia.edu");
+        vo.setName("abcd999");
+        vo.setPassword("abcd999");
+        try {
+            //DAOFactory.getIUserDAOInstance(dbc.getConnection()).findByEmail("hello123@gmail.com" );
+            ServiceFactory.getIUserServiceInstance().insert(vo);
+            fail("Expected an IndexOutOfBoundsException to be thrown");
+        } catch (Exception anJavaLongException) {
+            assertThat(anJavaLongException.getMessage(), is("The email already have been signed up, please try to sign it in instead"));
+        }
+
+    }
+
+
 
     @Test
     public void update() {
