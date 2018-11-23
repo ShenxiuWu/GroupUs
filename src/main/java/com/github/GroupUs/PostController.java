@@ -21,6 +21,7 @@ import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 import static com.github.GroupUs.Main.userId;
 
@@ -92,65 +93,43 @@ public class PostController implements Initializable {
 
         try{
 
-        if (subjectText.getText().isEmpty()){
-            System.out.println("first");
-            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in subject!");
-            return ;
+            if (startDate.getValue() == null || endDate.getValue() == null || startTime.getValue() == null || endTime.getValue() == null) {
+                throw new Exception("The time cannot be empty, please check your input again!");
+            }
+
+            LocalDateTime start = LocalDateTime.of(startDate.getValue(), startTime.getValue());
+            LocalDateTime end = LocalDateTime.of(endDate.getValue(), endTime.getValue());
+            Date startTime = Date.from(start.atZone(ZoneId.systemDefault()).toInstant());
+            Date endTime = Date.from(end.atZone(ZoneId.systemDefault()).toInstant());
+
+            System.out.println("startTime" + startTime);
+
+            Calendar calendar = Calendar.getInstance();
+            //Date time = calendar.getTime();
+            long timeInMillis = calendar.getTimeInMillis();
+            if (startTime.getTime() < timeInMillis) {
+                throw new Exception("The start time cannot be earlier than current time, please check your input again!");
+            }
+            if (startTime.getTime() > endTime.getTime()) {
+                throw new Exception("The start time cannot be later than end time, please check your input again!");
+            }
+
+            // Insert event into database
+            // userId = "trypost123@columbia.edu"; // only for now
+            vo.setCreator(userId);
+            vo.setCategory(choiceBOX.getValue());
+            vo.setSubject(subjectText.getText());
+            vo.setStart(startTime);
+            vo.setEnd(endTime);
+            vo.setLocation(locText.getText());
+            vo.setMemo(memoText.getText());
+            vo.setDescription(descriptionText.getText());
+            ServiceFactory.getIEventServiceInstance().insert(vo);
+            // showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Congrats!", "You post successfully!");
+            Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
+            Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            formerStage.setScene(new Scene(newRoot, 600, 400));
         }
-
-        if (locText.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should enter location!");
-            return ;
-        }
-
-        String location = locText.getText();
-        String[] locationCheck = {location};
-        boolean bool = distance.distanceCheck(locationCheck);
-        System.out.println("bool" + bool);
-        if (!bool) {
-            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "Invalid Location!");
-            return ;
-        }
-
-        if (startDate.getValue() == null || endDate.getValue() == null || startTime.getValue() == null || endTime.getValue() == null) {
-            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "You should fill in time!");
-            return ;
-        }
-
-        LocalDateTime start = LocalDateTime.of(startDate.getValue(), startTime.getValue());
-        LocalDateTime end = LocalDateTime.of(endDate.getValue(), endTime.getValue());
-        Date startTime = Date.from(start.atZone(ZoneId.systemDefault()).toInstant());
-        Date endTime = Date.from(end.atZone(ZoneId.systemDefault()).toInstant());
-
-        System.out.println("startTime" + startTime);
-
-        Calendar calendar = Calendar.getInstance();
-        //Date time = calendar.getTime();
-        long timeInMillis = calendar.getTimeInMillis();
-        if (startTime.getTime() < timeInMillis) {
-            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "Start time is earlier than current time!");
-            return ;
-        }
-        if (startTime.getTime() > endTime.getTime()) {
-            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error", "Start time is later than end time!");
-            return ;
-        }
-
-        // Insert event into database
-        // userId = "trypost123@columbia.edu"; // only for now
-        vo.setCreator(userId);
-        vo.setCategory(choiceBOX.getValue());
-        vo.setSubject(subjectText.getText());
-        vo.setStart(startTime);
-        vo.setEnd(endTime);
-        vo.setLocation(locText.getText());
-        vo.setMemo(memoText.getText());
-        vo.setDescription(descriptionText.getText());
-        ServiceFactory.getIEventServiceInstance().insert(vo);
-        // showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Congrats!", "You post successfully!");
-        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
-        Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        formerStage.setScene(new Scene(newRoot, 600, 400));}
         catch (Exception e){
             String error = e.getMessage();
             showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error!", error);
