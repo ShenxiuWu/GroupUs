@@ -24,29 +24,6 @@ public class EventServiceImplTest {
         databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
         try {
             userId = "test@columbia.edu";
-            // subject
-            // feature: length
-            vo.setSubject("testlengthtestlengthtestlength"); // invalid
-            TestCase.assertFalse(ServiceFactory.getIEventServiceInstance().insert(vo));
-            vo.setSubject(null); // invalid (boundary condition: null)
-            TestCase.assertFalse(ServiceFactory.getIEventServiceInstance().insert(vo));
-            vo.setSubject("testlengthtestlength1"); // invalid (boundary condition: length == 21)
-            TestCase.assertFalse(ServiceFactory.getIEventServiceInstance().insert(vo));
-            vo.setSubject("testlengthtestlengt"); // valid (boundary condition: length == 19)
-            TestCase.assertTrue(ServiceFactory.getIEventServiceInstance().insert(vo));
-            vo.setEventId(null);
-            vo.setSubject("groupstudy"); // valid
-            TestCase.assertTrue(ServiceFactory.getIEventServiceInstance().insert(vo));
-
-//            // character
-//            vo.setSubject("#$%^"); // invalid
-//            TestCase.assertFalse(ServiceFactory.getIEventServiceInstance().insert(vo));
-//            vo.setSubject(null); // invalid (boundary condition)
-//            TestCase.assertFalse(ServiceFactory.getIEventServiceInstance().insert(vo));
-//            vo.setSubject(null); // valid (boundary condition)
-//            TestCase.assertFalse(ServiceFactory.getIEventServiceInstance().insert(vo));
-//            vo.setSubject("#$%^"); // valid
-//            TestCase.assertFalse(ServiceFactory.getIEventServiceInstance().insert(vo));
         } catch (Exception e) {
             e.printStackTrace();
         }
