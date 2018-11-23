@@ -39,7 +39,7 @@ public class UserServiceImplTest {
     }
 
     @Test
-    public void testExceptionMessage() {
+    public void testEmailExceptionMessage() {
         databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
         UserInfo vo = new UserInfo();
         vo.setEmail("123");
@@ -48,6 +48,20 @@ public class UserServiceImplTest {
             fail("Expected an IndexOutOfBoundsException to be thrown");
         } catch (Exception anJavaLongException) {
             assertThat(anJavaLongException.getMessage(), is("The email format can only be ab1234/abc1234@columbia.edu, please check your input again!"));
+        }
+    }
+
+    @Test
+    public void testNameExceptionMessage() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        UserInfo vo = new UserInfo();
+        vo.setEmail("rz2390@columbia.edu");
+        vo.setName("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+        try {
+            ServiceFactory.getIUserServiceInstance().insert(vo);
+            fail("Expected an IndexOutOfBoundsException to be thrown");
+        } catch (Exception anJavaLongException) {
+            assertThat(anJavaLongException.getMessage(), is("The input name should start with character, cannot be null and no more than 20 bytes, with the following special characters _%&',;=?"));
         }
     }
 

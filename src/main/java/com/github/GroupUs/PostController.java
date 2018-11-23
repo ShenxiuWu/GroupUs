@@ -90,7 +90,7 @@ public class PostController implements Initializable {
 //        System.out.println(start);
 //        System.out.println(end);
 
-
+        try{
 
         if (subjectText.getText().isEmpty()){
             System.out.println("first");
@@ -150,7 +150,12 @@ public class PostController implements Initializable {
         // showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Congrats!", "You post successfully!");
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/status.fxml"));
         Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        formerStage.setScene(new Scene(newRoot, 600, 400));
+        formerStage.setScene(new Scene(newRoot, 600, 400));}
+        catch (Exception e){
+            String error = e.getMessage();
+            showAlert(Alert.AlertType.ERROR, postButton.getScene().getWindow(), "Form Error!", error);
+            return;
+        }
     }
 
     private void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {

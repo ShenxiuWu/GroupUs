@@ -33,18 +33,14 @@ public class EventServiceImpl implements IEventService {
         try {
             // Test Case: subject
             String subject = vo.getSubject();
-            // null
-            if (subject == null) {
-                return false;
-            }
             // length
             if (subject.length() > 20) {
-                return false;
+                throw new Exception("Your subject cannot be too long!");
             }
             // character
             if (!subject.matches("[a-zA-Z0-9]*")) {
-                return false;
-            } 
+                throw new Exception("You subject should only consist of characters and numbers");
+            }
             if (DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByEventId(vo.getEventId()) == null) {
                 String creator = userId;
                 Date createdAt = new Date();
