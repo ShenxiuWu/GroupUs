@@ -23,7 +23,6 @@ public class EventServiceImplTest {
     public void insert() {
         databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
         try {
-            TestCase.assertFalse(ServiceFactory.getIEventServiceInstance().insert(vo));
             userId = "test@columbia.edu";
             // subject
             // feature: length

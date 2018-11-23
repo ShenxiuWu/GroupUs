@@ -44,7 +44,7 @@ public class EventServiceImpl implements IEventService {
             // character
             if (!subject.matches("[a-zA-Z0-9]*")) {
                 return false;
-            }
+            } 
             if (DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByEventId(vo.getEventId()) == null) {
                 String creator = userId;
                 Date createdAt = new Date();

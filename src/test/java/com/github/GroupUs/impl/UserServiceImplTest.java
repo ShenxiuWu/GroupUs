@@ -11,6 +11,7 @@ import java.util.List;
 
 import static com.github.GroupUs.Main.databaseUrl;
 import static com.github.GroupUs.Main.userId;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class UserServiceImplTest {
@@ -34,6 +35,19 @@ public class UserServiceImplTest {
             TestCase.assertFalse(ServiceFactory.getIUserServiceInstance().insert(vo));
         } catch (Exception e){
             e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testExceptionMessage() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        UserInfo vo = new UserInfo();
+        vo.setEmail("123");
+        try {
+            ServiceFactory.getIUserServiceInstance().insert(vo);
+            fail("Expected an IndexOutOfBoundsException to be thrown");
+        } catch (Exception anJavaLongException) {
+            assertThat(anJavaLongException.getMessage(), is("The email format can only be ab1234/abc1234@columbia.edu, please check your input again!"));
         }
     }
 
