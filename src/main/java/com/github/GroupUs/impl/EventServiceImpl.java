@@ -9,7 +9,10 @@ import com.github.GroupUs.vo.UserInfo;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.result.UpdateResult;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.*;
+import java.util.regex.Pattern;
 
 import static com.github.GroupUs.Main.userId;
 
@@ -31,6 +34,27 @@ public class EventServiceImpl implements IEventService {
     @Override
     public boolean insert(EventInfo vo) throws Exception {
         try {
+            String subjectPattern = "^[a-zA-Z0-9\\s]{1,20}$";
+            String textPattern = "^[a-zA-Z0-9\\s]{1,100}$";
+
+            if (!Pattern.matches(subjectPattern, vo.getSubject())){
+                throw new Exception("The subject format cannot be special characters or too long, please check your input again!");
+            } else if (!Pattern.matches(textPattern, vo.getLocation())) {
+                throw new Exception("The location format cannot be special characters or too long, please check your input again!");
+            }
+
+            String location = vo.getLocation();
+            String[] locationCheck = {location};
+            boolean bool = distance.distanceCheck(locationCheck);
+            System.out.println("bool" + bool);
+            if (!bool) {
+                throw new Exception("The location should be valid, please check your input again!");
+            } else if (!Pattern.matches(textPattern, vo.getMemo())){
+                throw new Exception("The memo format cannot be special characters or too long, please check your input again!");
+            } else if (!Pattern.matches(textPattern, vo.getDescription())) {
+                throw new Exception("The description format cannot be special characters or too long, please check your input again!");
+            }
+
             if (DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByEventId(vo.getEventId()) == null) {
                 String creator = userId;
                 Date createdAt = new Date();
@@ -59,6 +83,7 @@ public class EventServiceImpl implements IEventService {
             }
             return false;
         } catch (Exception e) {
+            e.printStackTrace();
             throw e;
         } finally {
             this.dbc.close();

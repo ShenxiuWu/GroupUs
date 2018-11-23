@@ -13,6 +13,7 @@ import java.util.List;
 
 import static com.github.GroupUs.Main.userId;
 import static com.github.GroupUs.Main.databaseUrl;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class EventServiceImplTest {
@@ -30,24 +31,95 @@ public class EventServiceImplTest {
     }
 
     @Test
-    public void get() {
+    public void testSubjectExceptionMessage() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        EventInfo vo = new EventInfo();
+        vo.setSubject("@@@");
         try {
-            TestCase.assertNull(ServiceFactory.getIEventServiceInstance().get("rz2390@columbia.eduSun Oct 28 17:02:50 EDT 2018"));
-        } catch (Exception e){
-            e.printStackTrace();
+            ServiceFactory.getIEventServiceInstance().insert(vo);
+            fail("Expected an IndexOutOfBoundsException to be thrown");
+        } catch (Exception anJavaLongException) {
+            assertThat(anJavaLongException.getMessage(), is("The subject format cannot be special characters or too long, please check your input again!"));
         }
     }
 
     @Test
-    public void join() {
-        userId = null;
-        String eventId = null;
+    public void testLocationExceptionMessage() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        EventInfo vo = new EventInfo();
+        vo.setSubject("Group Study for ASE");
+        vo.setLocation("@@@");
         try {
-            TestCase.assertFalse(ServiceFactory.getIEventServiceInstance().join(userId, eventId));
-        } catch (Exception e) {
-            e.printStackTrace();
+            ServiceFactory.getIEventServiceInstance().insert(vo);
+            fail("Expected an IndexOutOfBoundsException to be thrown");
+        } catch (Exception anJavaLongException) {
+            assertThat(anJavaLongException.getMessage(), is("The location format cannot be special characters or too long, please check your input again!"));
         }
     }
+    @Test
+    public void testInvalidLocationExceptionMessage() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        EventInfo vo = new EventInfo();
+        vo.setSubject("Group Study for ASE");
+        vo.setLocation("ttt");
+        try {
+            ServiceFactory.getIEventServiceInstance().insert(vo);
+            fail("Expected an IndexOutOfBoundsException to be thrown");
+        } catch (Exception anJavaLongException) {
+            assertThat(anJavaLongException.getMessage(), is("The location should be valid, please check your input again!"));
+        }
+    }
+
+    @Test
+    public void testMemoExceptionMessage() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        EventInfo vo = new EventInfo();
+        vo.setSubject("Group Study for ASE");
+        vo.setLocation("Columbia University");
+        vo.setMemo("@@@");
+        try {
+            ServiceFactory.getIEventServiceInstance().insert(vo);
+            fail("Expected an IndexOutOfBoundsException to be thrown");
+        } catch (Exception anJavaLongException) {
+            assertThat(anJavaLongException.getMessage(), is("The memo format cannot be special characters or too long, please check your input again!"));
+        }
+    }
+
+    @Test
+    public void testDescriptionExceptionMessage() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        EventInfo vo = new EventInfo();
+        vo.setSubject("Group Study for ASE");
+        vo.setLocation("Columbia University");
+        vo.setMemo("NWC 1st floor");
+        vo.setDescription("@@@");
+        try {
+            ServiceFactory.getIEventServiceInstance().insert(vo);
+            fail("Expected an IndexOutOfBoundsException to be thrown");
+        } catch (Exception anJavaLongException) {
+            assertThat(anJavaLongException.getMessage(), is("The description format cannot be special characters or too long, please check your input again!"));
+        }
+    }
+
+//    @Test
+//    public void get() {
+//        try {
+//            TestCase.assertNull(ServiceFactory.getIEventServiceInstance().get("rz2390@columbia.eduSun Oct 28 17:02:50 EDT 2018"));
+//        } catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    @Test
+//    public void join() {
+//        userId = null;
+//        String eventId = null;
+//        try {
+//            TestCase.assertFalse(ServiceFactory.getIEventServiceInstance().join(userId, eventId));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     /**
      * @parameter location
