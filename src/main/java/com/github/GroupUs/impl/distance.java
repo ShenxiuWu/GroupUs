@@ -41,7 +41,7 @@ public class distance {
             //System.out.println(gson.toJson(result));
             res = gson.toJson(result);
             JsonObject obj = gson.fromJson(res, JsonObject.class);
-            System.out.println("test" + obj);
+            //System.out.println("test" + obj);
             //JSONParser parser = new JSONParser();
             //JSONObject obj = (JSONObject) parser.parse(res);
             //JSONObject obj = new JSONObject(result);

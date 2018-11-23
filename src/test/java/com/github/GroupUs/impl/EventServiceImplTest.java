@@ -24,6 +24,7 @@ public class EventServiceImplTest {
         databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
         try {
             userId = "test@columbia.edu";
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -53,13 +54,13 @@ public class EventServiceImplTest {
      * @parameter location
      *   @feature length
      *     @ equivalence partition：length smaller than 100 / length larger than 100
-     *       @ boundary condition: length = 99, length = 100, length = 101
+     *       @ boundary condition: length = 49, length = 50, length = 51
      *   @feature consist of 26 letters or numbers
      *     @ equivalence partition: string only contains 26 letters or numbers / string contains other special characters
-     *       @ boundary condition: string with $, string with space.
+     *       @ boundary condition: string with $.
      *   @feature valid/invalid locations(locations could/couldn't be found in matrixDistance class)
      *     @ equivalence partition: string enables method distanceCheck return true/false
-     *       @ boundary condition: string = null, string = test...
+     *       @ boundary condition: string = null, string = ttt...
      */
     @Test
     public void searchByCategory() {
