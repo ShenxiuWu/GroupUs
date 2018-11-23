@@ -31,16 +31,6 @@ public class EventServiceImpl implements IEventService {
     @Override
     public boolean insert(EventInfo vo) throws Exception {
         try {
-            // Test Case: subject
-            String subject = vo.getSubject();
-            // length
-            if (subject.length() > 20) {
-                throw new Exception("Your subject cannot be too long!");
-            }
-            // character
-            if (!subject.matches("[a-zA-Z0-9]*")) {
-                throw new Exception("You subject should only consist of characters and numbers");
-            }
             if (DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByEventId(vo.getEventId()) == null) {
                 String creator = userId;
                 Date createdAt = new Date();
