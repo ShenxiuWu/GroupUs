@@ -71,8 +71,11 @@ public class JoinController {
         eventTable.getColumns().clear();
 
         RadioButton selectedRadioButton = (RadioButton) type.getSelectedToggle();
-        System.out.println(selectedRadioButton.getText());
-        String category = selectedRadioButton.getText();
+        String category = "";
+        if (type.getSelectedToggle() != null){
+            category = selectedRadioButton.getText();
+        }
+        System.out.println(category);
         String location = locationText.getText();
         String[] locationCheck = {location};
         boolean bool = distance.distanceCheck(locationCheck);

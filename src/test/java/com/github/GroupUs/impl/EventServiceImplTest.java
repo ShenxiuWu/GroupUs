@@ -1,5 +1,6 @@
 package com.github.GroupUs.impl;
 
+import com.github.GroupUs.dbc.DatabaseConnection;
 import com.github.GroupUs.factory.ServiceFactory;
 import com.github.GroupUs.vo.EventInfo;
 import com.github.GroupUs.vo.UserInfo;
@@ -23,9 +24,14 @@ public class EventServiceImplTest {
     @Test
     public void insert() {
         databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        userId = "test@columbia.edu";
+        EventInfo vo = new EventInfo();
+        vo.setSubject("Group Study for ASE");
+        vo.setLocation("Columbia University");
+        vo.setMemo("NWC 1st floor");
+        vo.setDescription("Let us study");
         try {
-            userId = "test@columbia.edu";
-
+            TestCase.assertTrue(ServiceFactory.getIEventServiceInstance().insert(vo));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -104,8 +110,9 @@ public class EventServiceImplTest {
 
     @Test
     public void get() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
         try {
-            TestCase.assertNull(ServiceFactory.getIEventServiceInstance().get("rz2390@columbia.eduSun Oct 28 17:02:50 EDT 2018"));
+            TestCase.assertNotNull(ServiceFactory.getIEventServiceInstance().get("test@columbia.eduTue Nov 20 20:39:06 EST 2018"));
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -140,6 +147,7 @@ public class EventServiceImplTest {
      */
     @Test
     public void searchByCategory() {
+        databaseUrl = "mongodb://ase2018:ase2018@ds231723.mlab.com:31723/groupus";
         String category = "Study";
         String location = "Columbia University";
         try {

@@ -46,7 +46,6 @@ public class EventServiceImpl implements IEventService {
             String location = vo.getLocation();
             String[] locationCheck = {location};
             boolean bool = distance.distanceCheck(locationCheck);
-            System.out.println("bool" + bool);
             if (!bool) {
                 throw new Exception("The location should be valid, please check your input again!");
             } else if (!Pattern.matches(textPattern, vo.getMemo())){
@@ -55,33 +54,25 @@ public class EventServiceImpl implements IEventService {
                 throw new Exception("The description format cannot be special characters or too long, please check your input again!");
             }
 
-            if (DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByEventId(vo.getEventId()) == null) {
-                String creator = userId;
-                Date createdAt = new Date();
-                Date modifiedAt = new Date();
-                String eventId = userId + createdAt;
-                vo.setCreator(creator);
-                vo.setCreatedAt(createdAt);
-                vo.setModifiedAt(modifiedAt);
-                vo.setEventId(eventId);
-                UserInfo user = ServiceFactory.getIUserServiceInstance().get(creator);
-                if (user == null) {
-                    System.out.println("user is null, no need to add posted events to");
-                    return false;
-                } else {
-                    System.out.println(user);
-                    List<String> userPosted = user.getPosted();
-                    userPosted.add(eventId);
-                    user.setPosted(userPosted);
-                    ServiceFactory.getIUserServiceInstance().update(user);
-                    List<String> userJoined = user.getJoined();
-                    userJoined.add(eventId);
-                    user.setJoined(userJoined);
-                    ServiceFactory.getIUserServiceInstance().update(user);
-                }
-                return DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).doCreate(vo);
-            }
-            return false;
+            String creator = userId;
+            Date createdAt = new Date();
+            Date modifiedAt = new Date();
+            String eventId = userId + createdAt;
+            vo.setCreator(creator);
+            vo.setCreatedAt(createdAt);
+            vo.setModifiedAt(modifiedAt);
+            vo.setEventId(eventId);
+            UserInfo user = ServiceFactory.getIUserServiceInstance().get(creator);
+            System.out.println(user);
+            List<String> userPosted = user.getPosted();
+            userPosted.add(eventId);
+            user.setPosted(userPosted);
+            ServiceFactory.getIUserServiceInstance().update(user);
+            List<String> userJoined = user.getJoined();
+            userJoined.add(eventId);
+            user.setJoined(userJoined);
+            ServiceFactory.getIUserServiceInstance().update(user);
+            return DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).doCreate(vo);
         } catch (Exception e) {
             e.printStackTrace();
             throw e;
@@ -129,6 +120,8 @@ public class EventServiceImpl implements IEventService {
                 return null;
             }
             List<EventInfo> events = DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByCategory(category, currentLocation);
+            System.out.println(events);
+            System.out.println(events.size());
             if (events != null) {
                 Calendar calendar = Calendar.getInstance();
                 //Date time = calendar.getTime();
