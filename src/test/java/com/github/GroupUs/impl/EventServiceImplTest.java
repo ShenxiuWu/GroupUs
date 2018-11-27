@@ -21,7 +21,7 @@ public class    EventServiceImplTest {
     EventInfo vo = new EventInfo();
 
 
-    @Test
+    @Test // This is a valid equivalence class for insert method (sign up)
     public void insert() {
         databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
         userId = "test@columbia.edu";
@@ -37,7 +37,7 @@ public class    EventServiceImplTest {
         }
     }
 
-    @Test
+    @Test //
     public void testSubjectExceptionMessage() {
         databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
         EventInfo vo = new EventInfo();
