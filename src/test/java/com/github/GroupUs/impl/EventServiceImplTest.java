@@ -41,7 +41,7 @@ public class    EventServiceImplTest {
     public void testSubjectExceptionMessage() {
         databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
         EventInfo vo = new EventInfo();
-        vo.setSubject("@@@");
+        vo.setSubject("correct");
         try {
             ServiceFactory.getIEventServiceInstance().insert(vo);
             fail("Expected an IndexOutOfBoundsException to be thrown");
