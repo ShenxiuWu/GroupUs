@@ -116,28 +116,35 @@ public class EventServiceImpl implements IEventService {
     public List<EventInfo> searchByCategory(String category, String currentLocation) throws Exception {
 
         try {
-            if (distance.distanceCheck(new String []{currentLocation}) == false) {
+            if (!distance.distanceCheck(new String[] {currentLocation})) {
                 return null;
             }
             List<EventInfo> events = DAOFactory.getIEventDAOInstance(this.dbc.getConnection()).findByCategory(category, currentLocation);
-            System.out.println(events);
-            System.out.println(events.size());
-            if (events != null) {
-                Calendar calendar = Calendar.getInstance();
-                //Date time = calendar.getTime();
-                calendar.set(Calendar.SECOND, 0);
-                calendar.set(Calendar.MILLISECOND, 0);
-                long timeInMillis = calendar.getTimeInMillis();
-                for (int i = 0; i < events.size(); i ++) {
-                    if (events.get(i).getEnd().getTime() < timeInMillis) {
-                        events.remove(i);
-                    }
-                }
-                Collections.sort(events, new EventInfo.SortByDistance());
-                return events;
-            } else {
-                return null;
+            Calendar calendar = Calendar.getInstance();
+            //Date time = calendar.getTime();
+            calendar.set(Calendar.SECOND, 0);
+            calendar.set(Calendar.MILLISECOND, 0);
+            long timeInMillis = calendar.getTimeInMillis();
+            for (int i = 0; i < events.size(); i ++) {
+                System.out.println("End time " + events.get(i).getEnd().getTime());
             }
+            System.out.println("time in millis " + timeInMillis);
+            System.out.println("Original Size of events " + events.size());
+            int index = 0;
+            while (index < events.size()) {
+                if (events.get(index).getEnd().getTime() < timeInMillis) {
+                    events.remove(index);
+                    System.out.println("删除了!");
+                } else {
+                    index++;
+                }
+            }
+            System.out.println("Current Size of events " + events.size());
+            for (int i = 0; i < events.size(); i ++) {
+                System.out.println("events " + events.get(i));
+            }
+            Collections.sort(events, new EventInfo.SortByDistance());
+            return events;
         } catch (Exception e) {
             throw e;
         } finally {
