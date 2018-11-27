@@ -30,7 +30,7 @@ public class UserServiceImplTest {
         List<String> p = new ArrayList<String>();
         p.add("zz");
         p.add("xx");
-        vo.setEmail("rz2391@columbia.edu");
+        vo.setEmail("rz2393@columbia.edu");
         vo.setName("abcd999");
         vo.setPassword("abcd999");
         vo.setPosted(j);

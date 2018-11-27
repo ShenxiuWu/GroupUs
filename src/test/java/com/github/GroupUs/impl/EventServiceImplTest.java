@@ -17,7 +17,7 @@ import static com.github.GroupUs.Main.databaseUrl;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
-public class EventServiceImplTest {
+public class    EventServiceImplTest {
     EventInfo vo = new EventInfo();
 
 
