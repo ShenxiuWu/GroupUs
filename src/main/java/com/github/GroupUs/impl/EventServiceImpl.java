@@ -125,24 +125,22 @@ public class EventServiceImpl implements IEventService {
             calendar.set(Calendar.SECOND, 0);
             calendar.set(Calendar.MILLISECOND, 0);
             long timeInMillis = calendar.getTimeInMillis();
-            for (int i = 0; i < events.size(); i ++) {
-                System.out.println("End time " + events.get(i).getEnd().getTime());
-            }
-            System.out.println("time in millis " + timeInMillis);
-            System.out.println("Original Size of events " + events.size());
+//            for (int i = 0; i < events.size(); i ++) {
+//                System.out.println("End time " + events.get(i).getEnd().getTime());
+//            }
+
             int index = 0;
             while (index < events.size()) {
                 if (events.get(index).getEnd().getTime() < timeInMillis) {
                     events.remove(index);
-                    System.out.println("删除了!");
+//                    System.out.println("删除了!");
                 } else {
                     index++;
                 }
             }
-            System.out.println("Current Size of events " + events.size());
-            for (int i = 0; i < events.size(); i ++) {
-                System.out.println("events " + events.get(i));
-            }
+//            for (int i = 0; i < events.size(); i ++) {
+//                System.out.println("events " + events.get(i));
+//            }
             Collections.sort(events, new EventInfo.SortByDistance());
             return events;
         } catch (Exception e) {

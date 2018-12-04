@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static com.github.GroupUs.Main.databaseUrl;
 import static com.github.GroupUs.Main.userId;
@@ -30,7 +31,10 @@ public class UserServiceImplTest {
         List<String> p = new ArrayList<String>();
         p.add("zz");
         p.add("xx");
-        vo.setEmail("rz2399@columbia.edu");
+        Random rand = new Random();
+        int m = rand.nextInt(1000) + 1000;
+        String email = "rz" + m + "@columbia.edu";
+        vo.setEmail(email);
         vo.setName("abcd999");
         vo.setPassword("abcd999");
         vo.setPosted(j);

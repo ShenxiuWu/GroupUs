@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed5e2ba9-d931-4e91-81d6-5859db769c1d" name="Default Changelist" comment="">
+    <list default="true" id="21c1ec7b-9c0e-4fc4-a1ed-972a78bf3f37" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/distance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/distance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/EventServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/EventServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/EventServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/distanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/distanceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/UserServiceImplTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,165 +15,72 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/GroupUs$IEventServiceTest.ic" NAME="IEventServiceTest Coverage Results" MODIFIED="1542767812045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.github.GroupUs.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/GroupUs$IEventServiceTest_searchByCategory.ic" NAME="IEventServiceTest.searchByCategory Coverage Results" MODIFIED="1542767782151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.github.GroupUs.service.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/GroupUs$EventServiceImplTest_searchByCategory.exec" NAME="EventServiceImplTest.searchByCategory Coverage Results" MODIFIED="1543011196386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/groupus$com_github_GroupUs_impl_in_groupus.exec" NAME="com.github.GroupUs.impl in groupus Coverage Results" MODIFIED="1543879781368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.github.GroupUs.impl.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/GroupUs$UserServiceImplTest.exec" NAME="UserServiceImplTest Coverage Results" MODIFIED="1543000927467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/groupus$EventServiceImplTest.exec" NAME="EventServiceImplTest Coverage Results" MODIFIED="1543879747728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.github.GroupUs.impl.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/GroupUs$EventServiceImplTest.exec" NAME="EventServiceImplTest Coverage Results" MODIFIED="1543002477530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/groupus$com_github_GroupUs_in_groupus.exec" NAME="com.github.GroupUs in groupus Coverage Results" MODIFIED="1543883368185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.github.GroupUs.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/groupus$EventServiceImplTest.ic" NAME="EventServiceImplTest Coverage Results" MODIFIED="1543879688850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.github.GroupUs.impl.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/GroupUs$EventServiceImplTest_join.ic" NAME="EventServiceImplTest.join Coverage Results" MODIFIED="1543009290704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.github.GroupUs.impl.*</FILTER>
+    <SUITE FILE_PATH="coverage/groupus$com_github_GroupUs_in_groupus.ic" NAME="com.github.GroupUs in groupus Coverage Results" MODIFIED="1543879948905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.github.GroupUs.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/GroupUs$EventServiceImplTest.ic" NAME="EventServiceImplTest Coverage Results" MODIFIED="1543000257980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.github.GroupUs.impl.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/GroupUs$EventServiceImplTest_searchByCategory.ic" NAME="EventServiceImplTest.searchByCategory Coverage Results" MODIFIED="1543007555616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.github.GroupUs.impl.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/GroupUs$UserServiceImplTest.ic" NAME="UserServiceImplTest Coverage Results" MODIFIED="1543000905524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.github.GroupUs.impl.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/GroupUs$EventServiceImplTest_join.exec" NAME="EventServiceImplTest.join Coverage Results" MODIFIED="1543011100535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/groupus$com_github_GroupUs_impl_in_groupus.ic" NAME="com.github.GroupUs.impl in groupus Coverage Results" MODIFIED="1543877990917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.github.GroupUs.impl.*</FILTER>
     </SUITE>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="38" />
+    <option name="myElementSize" value="48" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="-1769123153">
+    <session id="804821892">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="fxml" value="2" />
-          <entry key="java" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="11" />
-          <entry key="XML" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="316" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="316" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-833645202">
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1052" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1052" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="fxml" value="4" />
-          <entry key="java" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="8" />
-          <entry key="XML" value="4" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="640278576">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.13" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="20" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="20" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="287" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="287" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="355337732">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="java" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="142" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="142" />
+        </counts>
+      </usages-collector>
     </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="groupus" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/EventServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="111" column="37" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/EventServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="86" column="34" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="34" />
+            <state relative-caret-position="601">
+              <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -181,73 +88,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1084">
-              <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+            <state relative-caret-position="19">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/vo/UserInfo.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/EventServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-304">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="570">
+              <caret line="137" column="28" lean-forward="true" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/UserServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="32" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/UserImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/distanceTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="102" selection-start-line="12" selection-start-column="102" selection-end-line="12" selection-end-column="102" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/distance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+            <state relative-caret-position="197">
+              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="JUnit4 Test Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>searchedEvent</find>
-      <find>userId</find>
-      <find>showAlert</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -255,18 +120,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/github/GroupUs/ProfileController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/GroupUs/distance.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/github/GroupUs/service/IEventServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/github/GroupUs/service/IUserServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/GroupUs/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/GroupUs/JoinController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/GroupUs/PostController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/github/GroupUs/distanceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/EventServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/distanceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/distance.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/EventServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/UserServiceImplTest.java" />
       </list>
     </option>
   </component>
@@ -283,9 +139,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="948" />
+    <option name="width" value="981" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -293,92 +150,55 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="groupus" type="b2602c69:ProjectViewProjectNode" />
               <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="groupus" type="b2602c69:ProjectViewProjectNode" />
               <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="groupus" type="b2602c69:ProjectViewProjectNode" />
               <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="groupus" type="b2602c69:ProjectViewProjectNode" />
               <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="groupus" type="b2602c69:ProjectViewProjectNode" />
               <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
-              <item name="factory" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="groupus" type="b2602c69:ProjectViewProjectNode" />
               <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="groupus" type="b2602c69:ProjectViewProjectNode" />
               <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="groupus" type="b2602c69:ProjectViewProjectNode" />
               <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
@@ -386,7 +206,16 @@
               <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GroupUs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="groupus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
+              <item name="dbc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="groupus" type="b2602c69:ProjectViewProjectNode" />
               <item name="GroupUs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
@@ -398,13 +227,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543011609338" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543883365634" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -420,7 +249,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EventServiceImplTest.searchByCategory">
+  <component name="RunManager" selected="JUnit.com.github.GroupUs in groupus">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.GroupUs.Main" />
       <module name="groupus" />
@@ -450,51 +279,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EventServiceImplTest.join" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="com.github.GroupUs in groupus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="groupus" />
       <extension name="coverage" runner="jacoco">
         <pattern>
-          <option name="PATTERN" value="com.github.GroupUs.impl.*" />
+          <option name="PATTERN" value="com.github.GroupUs.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.github.GroupUs.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.github.GroupUs.impl.EventServiceImplTest" />
-      <option name="METHOD_NAME" value="join" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EventServiceImplTest.searchByCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="groupus" />
-      <extension name="coverage" runner="jacoco">
-        <pattern>
-          <option name="PATTERN" value="com.github.GroupUs.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.github.GroupUs.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.github.GroupUs.impl.EventServiceImplTest" />
-      <option name="METHOD_NAME" value="searchByCategory" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="groupus" />
-      <extension name="coverage" runner="jacoco">
-        <pattern>
-          <option name="PATTERN" value="com.github.GroupUs.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.github.GroupUs.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.github.GroupUs.impl.UserServiceImplTest" />
+      <option name="PACKAGE_NAME" value="com.github.GroupUs" />
+      <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.github.GroupUs.impl in groupus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="groupus" />
+      <extension name="coverage" runner="jacoco">
+        <pattern>
+          <option name="PATTERN" value="com.github.GroupUs.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.GroupUs.impl" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -502,18 +315,16 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.UserServiceImplTest" />
+      <item itemvalue="JUnit.com.github.GroupUs.impl in groupus" />
       <item itemvalue="JUnit.EventServiceImplTest" />
-      <item itemvalue="JUnit.EventServiceImplTest.searchByCategory" />
-      <item itemvalue="JUnit.EventServiceImplTest.join" />
+      <item itemvalue="JUnit.com.github.GroupUs in groupus" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EventServiceImplTest.searchByCategory" />
-        <item itemvalue="JUnit.EventServiceImplTest.join" />
-        <item itemvalue="JUnit.EventServiceImplTest" />
-        <item itemvalue="JUnit.UserServiceImplTest" />
+        <item itemvalue="JUnit.com.github.GroupUs in groupus" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.com.github.GroupUs.impl in groupus" />
+        <item itemvalue="JUnit.EventServiceImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -522,80 +333,74 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ed5e2ba9-d931-4e91-81d6-5859db769c1d" name="Default Changelist" comment="" />
-      <created>1540781974660</created>
+      <changelist id="21c1ec7b-9c0e-4fc4-a1ed-972a78bf3f37" name="Default Changelist" comment="" />
+      <created>1543877789622</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1540781974660</updated>
-      <workItem from="1540781975994" duration="2546000" />
-      <workItem from="1540922816543" duration="1634000" />
-      <workItem from="1541356223053" duration="4455000" />
-      <workItem from="1541368334002" duration="398000" />
-      <workItem from="1541459541193" duration="8009000" />
-      <workItem from="1542760769750" duration="708000" />
-      <workItem from="1542999294300" duration="7203000" />
-      <workItem from="1543010472212" duration="948000" />
+      <updated>1543877789622</updated>
+      <workItem from="1543877793237" duration="2062000" />
+      <workItem from="1543879913179" duration="2538000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EventServiceImplTest_join - 2018.11.23 at 17h 01m 50s.xml">
-      <configuration name="EventServiceImplTest.join" configurationId="JUnit" />
+    <history-entry file="EventServiceImplTest - 2018.12.03 at 18h 28m 49s.xml">
+      <configuration name="EventServiceImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EventServiceImplTest_join - 2018.11.23 at 17h 02m 11s.xml">
-      <configuration name="EventServiceImplTest.join" configurationId="JUnit" />
+    <history-entry file="EventServiceImplTest - 2018.12.03 at 18h 29m 14s.xml">
+      <configuration name="EventServiceImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EventServiceImplTest_join - 2018.11.23 at 17h 02m 54s.xml">
-      <configuration name="EventServiceImplTest.join" configurationId="JUnit" />
+    <history-entry file="com_github_GroupUs_impl_in_groupus - 2018.12.03 at 18h 29m 50s.xml">
+      <configuration name="com.github.GroupUs.impl in groupus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EventServiceImplTest_join - 2018.11.23 at 17h 07m 36s.xml">
-      <configuration name="EventServiceImplTest.join" configurationId="JUnit" />
+    <history-entry file="com_github_GroupUs_in_groupus - 2018.12.03 at 18h 32m 42s.xml">
+      <configuration name="com.github.GroupUs in groupus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EventServiceImplTest_join - 2018.11.23 at 17h 07m 48s.xml">
-      <configuration name="EventServiceImplTest.join" configurationId="JUnit" />
+    <history-entry file="com_github_GroupUs_in_groupus - 2018.12.03 at 18h 33m 49s.xml">
+      <configuration name="com.github.GroupUs in groupus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EventServiceImplTest_join - 2018.11.23 at 17h 10m 43s.xml">
-      <configuration name="EventServiceImplTest.join" configurationId="JUnit" />
+    <history-entry file="com_github_GroupUs_in_groupus - 2018.12.03 at 18h 37m 38s.xml">
+      <configuration name="com.github.GroupUs in groupus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EventServiceImplTest_join - 2018.11.23 at 17h 11m 06s.xml">
-      <configuration name="EventServiceImplTest.join" configurationId="JUnit" />
+    <history-entry file="com_github_GroupUs_in_groupus - 2018.12.03 at 18h 44m 36s.xml">
+      <configuration name="com.github.GroupUs in groupus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EventServiceImplTest_join - 2018.11.23 at 17h 11m 17s.xml">
-      <configuration name="EventServiceImplTest.join" configurationId="JUnit" />
+    <history-entry file="com_github_GroupUs_in_groupus - 2018.12.03 at 18h 46m 13s.xml">
+      <configuration name="com.github.GroupUs in groupus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EventServiceImplTest_join - 2018.11.23 at 17h 11m 43s.xml">
-      <configuration name="EventServiceImplTest.join" configurationId="JUnit" />
+    <history-entry file="com_github_GroupUs_in_groupus - 2018.12.03 at 18h 46m 50s.xml">
+      <configuration name="com.github.GroupUs in groupus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EventServiceImplTest_searchByCategory - 2018.11.23 at 17h 13m 27s.xml">
-      <configuration name="EventServiceImplTest.searchByCategory" configurationId="JUnit" />
+    <history-entry file="com_github_GroupUs_in_groupus - 2018.12.03 at 19h 19m 46s.xml">
+      <configuration name="com.github.GroupUs in groupus" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29960000" />
+    <option name="totallyTimeSpent" value="4600000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2732475" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49814126" visible="true" weight="0.20291026" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.2497979" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.5018587" side_tool="true" weight="0.24818109" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29759037" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32899627" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3299363" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32899627" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -603,11 +408,41 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info anchor="right" id="Mongo Explorer" order="9" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" visible="true" weight="0.15164521" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info active="true" anchor="right" id="Coverage" order="9" side_tool="true" visible="true" weight="0.35569927" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24818109" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.32899627" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.32960895" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.36701697" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -615,163 +450,39 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="from green" />
-    <MESSAGE value="add unit test for service" />
-    <option name="LAST_COMMIT_MESSAGE" value="add unit test for service" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/GroupUs1/src/main/java/com/github/GroupUs/JoinController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/profile.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/junit/framework/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="98" selection-start-line="35" selection-start-column="98" selection-end-line="35" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/status.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/post.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/login.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-987" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/distance.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/service/IUserServiceTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/service/IEventServiceTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/distanceTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/ProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/vo/EventInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="161" column="25" selection-start-line="161" selection-start-column="25" selection-end-line="161" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/JoinController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/PostController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/service/IEventService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/StatusController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/distanceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="102" selection-start-line="12" selection-start-column="102" selection-end-line="12" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/distance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/UserImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/UserServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/vo/UserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-304">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="111">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1084">
-          <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/EventServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="86" column="34" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="34" />
+        <state relative-caret-position="19">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/GroupUs/impl/EventServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="111" column="37" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="570">
+          <caret line="137" column="28" lean-forward="true" selection-start-line="137" selection-start-column="28" selection-end-line="137" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/EventServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/github/GroupUs/impl/UserServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="56" />
         </state>
       </provider>
     </entry>

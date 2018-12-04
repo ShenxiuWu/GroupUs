@@ -147,6 +147,7 @@ public class    EventServiceImplTest {
      */
     @Test
     public void searchByCategory() {
+        userId = "rz2390@columbia.edu";
         databaseUrl = "mongodb://ase2018:ase2018@ds231723.mlab.com:31723/groupus";
         String category = "Study";
         String location = "Columbia University";
@@ -164,7 +165,7 @@ public class    EventServiceImplTest {
             TestCase.assertNotNull(res);
             location = "Time square Long Term Building Office Apartment 2"; //length = 49
             res = ServiceFactory.getIEventServiceInstance().searchByCategory(category, location);
-            TestCase.assertNotNull(res);
+            TestCase.assertNull(res);
         } catch (Exception e) {
             e.printStackTrace();
         }
