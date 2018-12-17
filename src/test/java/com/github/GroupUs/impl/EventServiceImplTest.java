@@ -23,7 +23,7 @@ public class    EventServiceImplTest {
 
     @Test // This is a valid equivalence class for insert method (sign up)
     public void insert() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         userId = "test@columbia.edu";
         EventInfo vo = new EventInfo();
         vo.setSubject("Group Study for ASE");
@@ -39,7 +39,7 @@ public class    EventServiceImplTest {
 
     @Test //
     public void testSubjectExceptionMessage() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         EventInfo vo = new EventInfo();
         vo.setSubject("@@@");
         try {
@@ -52,7 +52,7 @@ public class    EventServiceImplTest {
 
     @Test
     public void testLocationExceptionMessage() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         EventInfo vo = new EventInfo();
         vo.setSubject("Group Study for ASE");
         vo.setLocation("@@@");
@@ -65,7 +65,7 @@ public class    EventServiceImplTest {
     }
     @Test
     public void testInvalidLocationExceptionMessage() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         EventInfo vo = new EventInfo();
         vo.setSubject("Group Study for ASE");
         vo.setLocation("ttt");
@@ -79,7 +79,7 @@ public class    EventServiceImplTest {
 
     @Test
     public void testMemoExceptionMessage() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         EventInfo vo = new EventInfo();
         vo.setSubject("Group Study for ASE");
         vo.setLocation("Columbia University");
@@ -94,7 +94,7 @@ public class    EventServiceImplTest {
 
     @Test
     public void testDescriptionExceptionMessage() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         EventInfo vo = new EventInfo();
         vo.setSubject("Group Study for ASE");
         vo.setLocation("Columbia University");
@@ -110,7 +110,7 @@ public class    EventServiceImplTest {
 
     @Test
     public void get() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         try {
             TestCase.assertNotNull(ServiceFactory.getIEventServiceInstance().get("test@columbia.eduTue Nov 20 20:39:06 EST 2018"));
         } catch (Exception e){
@@ -120,8 +120,8 @@ public class    EventServiceImplTest {
 
     @Test
     public void join() {
-        userId = "rz2391@columbia.edu";
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        userId = "xx1234@columbia.edu";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         double num = Math.random();
         String eventId = "test@columbia.eduTue Nov 20 20:39:06 EST 2019" + num;
         try {
@@ -147,8 +147,8 @@ public class    EventServiceImplTest {
      */
     @Test
     public void searchByCategory() {
-        userId = "rz2390@columbia.edu";
-        databaseUrl = "mongodb://ase2018:ase2018@ds231723.mlab.com:31723/groupus";
+        userId = "xx1234@columbia.edu";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         String category = "Study";
         String location = "Columbia University";
         try {

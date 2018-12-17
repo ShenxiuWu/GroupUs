@@ -23,7 +23,7 @@ public class UserServiceImplTest {
 
     @Test
     public void insert() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         UserInfo vo = new UserInfo();
         List<String> j = new ArrayList<String>();
         j.add("xx");
@@ -49,7 +49,7 @@ public class UserServiceImplTest {
 
     @Test
     public void testEmailExceptionMessage() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         UserInfo vo = new UserInfo();
         vo.setEmail("123");
         try {
@@ -62,9 +62,9 @@ public class UserServiceImplTest {
 
     @Test
     public void testNameExceptionMessage() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         UserInfo vo = new UserInfo();
-        vo.setEmail("rz2390@columbia.edu");
+        vo.setEmail("xx1234@columbia.edu");
         vo.setName("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
         try {
             ServiceFactory.getIUserServiceInstance().insert(vo);
@@ -76,9 +76,9 @@ public class UserServiceImplTest {
 
     @Test
     public void testPasswordExceptionMessage() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         UserInfo vo = new UserInfo();
-        vo.setEmail("rz2390@columbia.edu");
+        vo.setEmail("xx1234@columbia.edu");
         vo.setName("testName");
         vo.setPassword("123abcde");
         try {
@@ -91,10 +91,10 @@ public class UserServiceImplTest {
 
     @Test
     public void testFindByEmailNullExceptionMessage() {
-        databaseUrl = "mongodb://ase2018:ase2018@ds039027.mlab.com:39027/groupustest";
+        databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
         DatabaseConnection dbc = new DatabaseConnection();
         UserInfo vo = new UserInfo();
-        vo.setEmail("rz2390@columbia.edu");
+        vo.setEmail("xx1234@columbia.edu");
         vo.setName("abcd999");
         vo.setPassword("abcd999");
         try {
@@ -153,7 +153,7 @@ public class UserServiceImplTest {
 
     @Test
     public void testGetJoinedEvent() {
-        userId = "rz2390@columbia.edu";
+        userId = "xx1234@columbia.edu";
         try {
             TestCase.assertNotNull(ServiceFactory.getIUserServiceInstance().getJoinedEvent(userId));
         } catch (Exception e) {
@@ -163,7 +163,7 @@ public class UserServiceImplTest {
 
     @Test
     public void testGetPostedEvent() {
-        userId = "rz2390@columbia.edu";
+        userId = "xx1234@columbia.edu";
         try {
             TestCase.assertNotNull(ServiceFactory.getIUserServiceInstance().getPostedEvent(userId));
         } catch (Exception e) {

@@ -10,7 +10,7 @@ import javafx.scene.Parent;
 public class Main extends Application {
 
     public static String userId = null;
-    public static String databaseUrl = "mongodb://ase2018:ase2018@ds231723.mlab.com:31723/groupus";
+    public static String databaseUrl = "mongodb://xxxxxxxxxxxxxxxxxxxxxx";
 
     @Override
     public void start(Stage primaryStage) throws Exception{
