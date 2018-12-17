@@ -64,7 +64,7 @@
    <children>
 
       <ChoiceBox fx:id="choiceBOX" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="127.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" onAction="#backtoStatus" prefHeight="20.0" prefWidth="85.0" text="back" GridPane.rowIndex="27">
+      <Button mnemonicParsing="false" onAction="#backtoStatus" prefHeight="20.0" prefWidth="85.0" text="back" GridPane.rowIndex="25">
          <font>
             <Font size="8.0" />
          </font>
@@ -108,8 +108,8 @@
       </Label>
       <TextArea fx:id="memoText" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="144.0" GridPane.columnIndex="7" GridPane.rowIndex="16" />
       <TextArea fx:id="descriptionText" minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="339.0" GridPane.rowIndex="21" />
-       <Button fx:id="postButton" defaultButton="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pressPost" prefHeight="36.0" prefWidth="90.0" text="Post" GridPane.columnIndex="9" GridPane.rowIndex="23" />
-       <Button mnemonicParsing="false" onAction="#logout" prefHeight="20.0" prefWidth="85.0" text="logout" GridPane.columnIndex="10" GridPane.rowIndex="27">
+       <Button fx:id="postButton" defaultButton="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pressPost" prefHeight="36.0" prefWidth="90.0" text="Post" GridPane.columnIndex="9" GridPane.rowIndex="22" />
+       <Button mnemonicParsing="false" onAction="#logout" prefHeight="20.0" prefWidth="85.0" text="logout" GridPane.columnIndex="10" GridPane.rowIndex="25">
            <font>
                <Font size="8.0" />
            </font>
