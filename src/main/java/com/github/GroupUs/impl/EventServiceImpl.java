@@ -34,8 +34,8 @@ public class EventServiceImpl implements IEventService {
     @Override
     public boolean insert(EventInfo vo) throws Exception {
         try {
-            String subjectPattern = "^[a-zA-Z0-9\\s]{1,50}$";
-            String textPattern = "^[a-zA-Z0-9\\s]{1,100}$";
+            String subjectPattern = "^[a-zA-Z0-9][a-zA-Z0-9_\\s]{0,19}$";
+            String textPattern = "^[a-zA-Z0-9][a-zA-Z0-9_%&',;=?\\s]{0,99}$";
 
             if (!Pattern.matches(subjectPattern, vo.getSubject())){
                 throw new Exception("The subject format cannot be special characters or too long, please check your input again!");
