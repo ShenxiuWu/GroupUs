@@ -14,7 +14,7 @@ public class StatusController {
         //user id
         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/profile.fxml"));
         Stage formerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        formerStage.setScene(new Scene(newRoot, 600, 400));
+        formerStage.setScene(new Scene(newRoot, 600, 500));
 
     }
 

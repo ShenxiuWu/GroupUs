@@ -34,7 +34,7 @@ public class EventServiceImpl implements IEventService {
     @Override
     public boolean insert(EventInfo vo) throws Exception {
         try {
-            String subjectPattern = "^[a-zA-Z0-9\\s]{1,20}$";
+            String subjectPattern = "^[a-zA-Z0-9\\s]{1,50}$";
             String textPattern = "^[a-zA-Z0-9\\s]{1,100}$";
 
             if (!Pattern.matches(subjectPattern, vo.getSubject())){
