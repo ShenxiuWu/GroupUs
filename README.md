@@ -1,5 +1,5 @@
 # GroupUs
-hello hello
+hello
 
 1. Build:
 
