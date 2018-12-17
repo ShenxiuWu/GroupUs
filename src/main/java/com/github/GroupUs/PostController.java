@@ -94,8 +94,7 @@ public class PostController implements Initializable {
         try{
 
             if (startDate.getValue() == null || endDate.getValue() == null || startTime.getValue() == null || endTime.getValue() == null) {
-
-               // throw new Exception("The time cannot be empty, please check your input again!");
+                throw new Exception("The time cannot be empty, please check your input again!");
             }
 
             LocalDateTime start = LocalDateTime.of(startDate.getValue(), startTime.getValue());
@@ -103,7 +102,17 @@ public class PostController implements Initializable {
             Date startTime = Date.from(start.atZone(ZoneId.systemDefault()).toInstant());
             Date endTime = Date.from(end.atZone(ZoneId.systemDefault()).toInstant());
 
+            System.out.println("startTime" + startTime);
 
+            Calendar calendar = Calendar.getInstance();
+            //Date time = calendar.getTime();
+            long timeInMillis = calendar.getTimeInMillis();
+            if (startTime.getTime() < timeInMillis) {
+                throw new Exception("The start time cannot be earlier than current time, please check your input again!");
+            }
+            if (startTime.getTime() > endTime.getTime()) {
+                throw new Exception("The start time cannot be later than end time, please check your input again!");
+            }
 
             // Insert event into database
             // userId = "trypost123@columbia.edu"; // only for now
