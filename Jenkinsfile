@@ -14,7 +14,7 @@ node{
         mvnHome = tool 'maven 3.5.4'
         
         stage('checkout') {
-            git branch: "${env.BRANCH_NAME}", credentialsId: 'd383a1cc-5b34-4b81-a95e-d4d6223354bb', url: 'https://github.com/sw3196/GroupUs.git'
+            git branch: "${env.BRANCH_NAME}", credentialsId: 'ccd383a1cc-5b34-4b81-a95e-d4d6223354cc', url: 'https://github.com/sw3196/GroupUs.git'
         }
 
         stage('compling, test, packaging'){

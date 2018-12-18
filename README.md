@@ -1,5 +1,5 @@
 # GroupUs
-hello hello
+Welcome! For our App vedio demo, just click the link: https://youtu.be/IcWswa-rTZo
 
 1. Build:
 
