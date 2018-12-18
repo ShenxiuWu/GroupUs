@@ -26,7 +26,7 @@ import static java.lang.Integer.parseInt;
 public class distance {
     public static Integer distanceMatirx(String [] origins, String [] destinations) {
         GeoApiContext context = new GeoApiContext.Builder()
-                .apiKey("AIzaSyBB2Mz7wexVz5mlpom9NqQc--6bf5tPbfo")
+                .apiKey("xxxxxxxxxxxx")
                 .build();
         String res = "";
         Integer meters = 0;
@@ -60,7 +60,7 @@ public class distance {
 
     public static boolean distanceCheck(String [] origins) {
         GeoApiContext context = new GeoApiContext.Builder()
-                .apiKey("AIzaSyBB2Mz7wexVz5mlpom9NqQc--6bf5tPbfo")
+                .apiKey("xxxxxxxxxxxx")
                 .build();
         String res = "";
         Integer meters = 0;
